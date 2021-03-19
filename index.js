@@ -232,6 +232,7 @@ express()
     }
   })
   .get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
+  .get('/xingyuzhu', (req, res) => res.render('pages/xingyuzhu'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 /*  HELPER FUNCTIONS BELOW 
