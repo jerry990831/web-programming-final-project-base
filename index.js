@@ -231,8 +231,8 @@ express()
       res.send("Error " + err);
     }
   })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`)).get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
-
+  .get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 /*  HELPER FUNCTIONS BELOW 
  */
