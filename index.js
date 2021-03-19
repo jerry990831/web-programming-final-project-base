@@ -233,7 +233,8 @@ express()
   })
   .get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
   .get('/xingyuzhu', (req, res) => res.render('pages/xingyuzhu'))
-  .get('/xingyuzhu', (req, res) => res.render('pages/yiquanxiao'))
+  .get('/yiquanxiao', (req, res) => res.render('pages/yiquanxiao'))
+  .get('/yichengwang', (req, res) => res.render('pages/yichengwang'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 /*  HELPER FUNCTIONS BELOW 
