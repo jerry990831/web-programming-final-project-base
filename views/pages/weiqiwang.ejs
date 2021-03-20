@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <title>Damage Calculator Page</title>
-<head>
+<head><link rel="stylesheet" type="text/css" href="/public/weiqiwang.css">
 </head>
  
 <body>
  
-    <h2>Damage Calculator Page</h2>
-    <p>Choose ATK Pokemon and statistic</p>
-    <select>
+    <h2 class="medium">Damage Calculator Page</h2>
+    <p class="medium">Choose ATK Pokemon and statistic</p>
+    <div class="medium">
+    <select class="medium">
         <option value ="Bulbasaur">Bulbasaur</option>
         <option value ="Ivysaur">Ivysaur</option>
         <option value="Venusaur">Venusaur</option>
         <option value="Charmander">Charmander</option>
       </select>
-      <table border="1">
+      </div>
+      <div class="medium">
+      <table border="1" align="center">
         <tr>
             <th>HP</th>
             <th>ATK</th>
@@ -24,22 +27,26 @@
             <th>SPEED</th>
         </tr>
         <tr>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
         </tr>
     </table>
-    <p>Choose ATK Pokemon and statistic</p>
-    <select>
+    </div>
+    <p class="medium">Choose ATK Pokemon and statistic</p>
+    <div class="medium">
+    <select class="medium">
         <option value ="Bulbasaur">Bulbasaur</option>
         <option value ="Ivysaur">Ivysaur</option>
         <option value="Venusaur">Venusaur</option>
         <option value="Charmander">Charmander</option>
       </select>
-      <table border="1">
+      </div>
+
+      <table align="center" border="1">
         <tr>
             <th>HP</th>
             <th>ATK</th>
@@ -49,22 +56,24 @@
             <th>SPEED</th>
         </tr>
         <tr>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
-            <th>100</th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
+            <th><input type="text" value="200"></th>
         </tr>
     </table>
-    <p>Choose ATK Pokemon and statistic</p>
-    <select>
+    <p class="medium">Choose ATK Pokemon and statistic</p>
+    <div class="medium">
+    <select> 
         <option value ="Bulbasaur">Bulbasaur</option>
         <option value ="Ivysaur">Ivysaur</option>
         <option value="Venusaur">Venusaur</option>
         <option value="Charmander">Charmander</option>
       </select>
-      <table border="1">
+      </div>
+      <table align="center" border="1">
         <tr>
             <th>Name</th>
             <th>Type</th>
@@ -79,10 +88,15 @@
             <th>None</th>
             <th>40</th>
     </table>
-    <input class=submit type="button" value="Submit" id="validate">
-    <p>Result:</p>
-    <input type="text" value="200" >
+    <div align="center">
+        <input type="button" value="Submit" id="validate">
+    </div>
+    <p class="medium">Result:</p>
+    <div align="center">
+        <input type="text" value="200" >
+    </div>
+    <div align="right">
     <input class=submit type="button" value="Return to menu" id="validate">
-
+    </div>
 </body>
 </html>
