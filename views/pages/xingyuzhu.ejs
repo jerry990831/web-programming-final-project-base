@@ -2,37 +2,36 @@
 <html>
 <head>
     <title>Species Strength to Statistic page</title>
-    <meta charset="utf-8">
-	<script src="" defer></script>
     <link rel="stylesheet" href="xingyuzhu.css"/>
 </head>
  
 <body>
     <h1 class = "center">Species Strength to Statistic Page</h1>
-    <h2>Choose target Pokemon and Nature:</h2>
-    <select name = "pokemon" class = "scroll">
-        <option value = "Abra">Abra</option>
-        <option value = "Absol">Absol</option>
-        <option value = "Accelgor">Accelgor</option>
-        <option value = "Aegislash">Aegislash</option>
-        <option value = "Aggron">Aggron</option>
-        <option value = "Aipom">Aipom</option>
-        <option value = "Aron">Aron</option>
-    </select>
+    <p class = "center">Choose target Pokemon and Nature:</p>
+    <div class = "center">
+        <select name = "pokemon">
+            <option value = "Abra">Abra</option>
+            <option value = "Absol">Absol</option>
+            <option value = "Accelgor">Accelgor</option>
+            <option value = "Aegislash">Aegislash</option>
+            <option value = "Aggron">Aggron</option>
+            <option value = "Aipom">Aipom</option>
+            <option value = "Aron">Aron</option>
+        </select>
+        <select name = "nature">
+            <option value = "adament">Adament</option>
+            <option value = "bashful">Bashful</option>
+            <option value = "bold">Bold</option>
+            <option value = "brave">Brave</option>
+            <option value = "calm">Calm</option>
+            <option value = "careful">Careful</option>
+            <option value = "docile">Docile</option>
+            <option value = "gentle">Gentle</option>
+            <option value = "hardy">Hardy</option>
+        </select>
+    </div>
 
-    <select name = "nature" class = "scroll">
-        <option value = "adament">Adament</option>
-        <option value = "bashful">Bashful</option>
-        <option value = "bold">Bold</option>
-        <option value = "brave">Brave</option>
-        <option value = "calm">Calm</option>
-        <option value = "careful">Careful</option>
-        <option value = "docile">Docile</option>
-        <option value = "gentle">Gentle</option>
-        <option value = "hardy">Hardy</option>
-    </select>
-
-    <h2>Pokemon's Data</h2>
+    <p class = "center">Pokemon's Data</p>
     <table>
         <tr>
             <th class = "borderS">HP</th>
@@ -52,7 +51,7 @@
         </tr>
     </table>
 
-    <h2>Fill Your Base Point</h2>
+    <p class = "center">Fill Your Base Point</p>
     <table>
         <tr>
             <th class = "borderS">HP</th>
@@ -85,12 +84,12 @@
     </table>
 
     <form>
-        <div>
+        <div class = "center">
             <input type = "submit" value = "Submit" class="submit" id = "sub">
         </div>
     </form>
 
-    <h2>Result:</h2>
+    <p class = "center">Result:</p>
     <table>
         <tr>
             <th class = "borderS">HP</th>
@@ -110,7 +109,7 @@
         </tr>
     </table>
 
-    <a href="" id = "menu">return to the menu</a>
+    <a href="" id = "menu">Return to the menu</a>
 
 </body>
 </html>
