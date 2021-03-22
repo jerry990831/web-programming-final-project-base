@@ -1,9 +1,20 @@
-h2{
-	font: "bodoni mt black";
+h2 {
+	margin: 50px auto;
+	text-align: center;
+	text-shadow: -2px -2px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,1);
+	color: #0000ff;
+	opacity: 0.4;
+	font: 700 80px 'Bitter';
 	text-transform: uppercase;
+	text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+	    1px 5px 0 grey;
 }
 p{
+	margin: 50px auto;
+	text-align: center;
+	font: 700 30px 'Bitter';
 	font: "bodoni mt black";
+	color: #28bdbd
 }
 ul {
 	list-style: none;
