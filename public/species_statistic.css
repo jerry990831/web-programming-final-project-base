@@ -1,0 +1,37 @@
+.center {
+    text-align: center;
+}
+.scroll {
+    font-size: 18px;
+}
+
+.submit {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+a {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.borderS {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+    justify-content: stretch;
+    width: 50px;
+    height: 20px;
+ }
+
+ #userinput {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+    width: 50px;
+    margin-bottom: 2%;
+ }
+ 

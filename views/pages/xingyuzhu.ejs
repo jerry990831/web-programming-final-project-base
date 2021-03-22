@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Species Strength to Statistic page</title>
+    <link rel="stylesheet" href="C://Users/xingy/quiet-beyond-13399/public/species_statistic.css"/>
 </head>
  
 <body>
- 
-    <h2>Test EJS File for Xingyu Zhu</h2>
- 
+    <h1 class = "center">Species Strength to Statistic Page</h1>
+    <h2>Choose target Pokemon and Nature:</h2>
+    <select name = "pokemon" class = "scroll">
+        <option value = "Abra">Abra</option>
+        <option value = "Absol">Absol</option>
+        <option value = "Accelgor">Accelgor</option>
+        <option value = "Aegislash">Aegislash</option>
+        <option value = "Aggron">Aggron</option>
+        <option value = "Aipom">Aipom</option>
+        <option value = "Aron">Aron</option>
+    </select>
+
+    <select name = "nature" class = "scroll">
+        <option value = "adament">Adament</option>
+        <option value = "bashful">Bashful</option>
+        <option value = "bold">Bold</option>
+        <option value = "brave">Brave</option>
+        <option value = "calm">Calm</option>
+        <option value = "careful">Careful</option>
+        <option value = "docile">Docile</option>
+        <option value = "gentle">Gentle</option>
+        <option value = "hardy">Hardy</option>
+    </select>
+
+    <h2>Pokemon's Data</h2>
+    <table>
+        <tr>
+            <th class = "borderS">HP</th>
+            <th class = "borderS">ATK</th>
+            <th class = "borderS">DEF</th>
+            <th class = "borderS">SP.ATK</th>
+            <th class = "borderS">SP.DEF</th>
+            <th class = "borderS">SPEED</th>
+        </tr>
+        <tr>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+        </tr>
+    </table>
+
+    <h2>Fill Your Base Point</h2>
+    <table>
+        <tr>
+            <th class = "borderS">HP</th>
+            <th class = "borderS">ATK</th>
+            <th class = "borderS">DEF</th>
+            <th class = "borderS">SP.ATK</th>
+            <th class = "borderS">SP.DEF</th>
+            <th class = "borderS">SPEED</th>
+        </tr>
+        <tr>
+            <td>
+                <input type = "number" name = "hp" id = "userinput">
+            </td>
+            <td>
+                <input type = "number" name = "hp" id = "userinput">
+            </td>
+            <td>
+                <input type = "number" name = "hp" id = "userinput">
+            </td>
+            <td>
+                <input type = "number" name = "hp" id = "userinput">
+            </td>
+            <td>
+                <input type = "number" name = "hp" id = "userinput">
+            </td>
+            <td>
+                <input type = "number" name = "hp" id = "userinput">
+            </td>
+        </tr>
+    </table>
+
+    <form>
+        <div>
+            <input type = "submit" value = "Submit" class="submit" id = "sub">
+        </div>
+    </form>
+
+    <h2>Result:</h2>
+    <table>
+        <tr>
+            <th class = "borderS">HP</th>
+            <th class = "borderS">ATK</th>
+            <th class = "borderS">DEF</th>
+            <th class = "borderS">SP.ATK</th>
+            <th class = "borderS">SP.DEF</th>
+            <th class = "borderS">SPEED</th>
+        </tr>
+        <tr>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+            <td class = "borderS"></td>
+        </tr>
+    </table>
+
+    <a href="" id = "menu">return to the menu</a>
+
 </body>
 </html>
