@@ -30,9 +30,14 @@ table {
     border-collapse: collapse; 
 } 
 
-td { 
-    text-align: center; 
-} 
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+    justify-content: stretch;
+    width: 50px;
+    height: 20px;
+ }
 
 #submit {
     width: 200px;
@@ -56,4 +61,12 @@ td {
     cursor: pointer;
     float: right;
     clear: both;
+}
+
+.hidden{
+    display: none;
+}
+
+.error{
+    color: green;
 }

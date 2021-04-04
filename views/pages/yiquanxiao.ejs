@@ -3,163 +3,171 @@
     <meta charset="UTF-8">
     <title>Individual Value Calculator</title>
     <link rel="stylesheet" href="IVCalculator.css">
-    <!-- <script src="hw6.js" defer></script> -->
+    <script src="IVCalculator.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <body>
         <header>
             <h1>Individual Value Calculator Page</h1>
         </header>
 
-        <form>
-            <div>
-                <p>Choose target Pokemon</p>
-                <select>
-                    <optgroup label="Pokemon">
-                        <option value ="Bulbasaur">Bulbasaur</option>
-                        <option value ="Ivysaur">Ivysaur</option>
-                        <option value="Venusaur">Venusaur</option>
-                        <option value="Charmander">Charmander</option>
-                    </optgroup>
-                </select>
+        <div>
+            <p>Choose target Pokemon and Nature</p>
+            <select>
+                <optgroup label="Pokemon" id="pokemon">
+                    <option value ="Bulbasaur">Bulbasaur</option>
+                    <option value ="Ivysaur">Ivysaur</option>
+                    <option value="Venusaur">Venusaur</option>
+                    <option value="Charmander">Charmander</option>
+                </optgroup>
+            </select>
 
-                <select>
-                    <optgroup label="Nature">
-                        <option value="Hardy">Hardy</option>
-                        <option value="Lonely">Lonely</option>
-                        <option value="Brave">Brave</option>
-                        <option value="Adamant">Adamant</option>
-                        <option value="Naughty">Naughty</option>
-                        <option value="Bold">Bold</option>
-                        <option value="Docile">Docile</option>
-                        <option value="Relaxed">Relaxed</option>
-                        <option value="Impish">Impish</option>
-                        <option value="Lax">Lax</option>
-                        <option value="Timid">Timid</option>
-                        <option value="Hasty">Hasty</option>
-                        <option value="Serious">Serious</option>
-                        <option value="Jolly">Jolly</option>
-                        <option value="Naive">Naive</option>
-                        <option value="Modest">Modest</option>
-                        <option value="Mild">Mild</option>
-                        <option value="Quiet">Quiet</option>
-                        <option value="Bashful">Bashful</option>
-                        <option value="Rash">Rash</option>
-                        <option value="Calm">Calm</option>
-                        <option value="Gentle">Gentle</option>
-                        <option value="Sassy">Sassy</option>
-                        <option value="Careful">Careful</option>
-                        <option value="Quirky">Quirky</option>
-                    </optgroup>
-                </select>
-            </div>
+            <select>
+                <optgroup label="Nature" id="nature">
+                    <option value="Hardy">Hardy</option>
+                    <option value="Lonely">Lonely</option>
+                    <option value="Brave">Brave</option>
+                    <option value="Adamant">Adamant</option>
+                    <option value="Naughty">Naughty</option>
+                    <option value="Bold">Bold</option>
+                    <option value="Docile">Docile</option>
+                    <option value="Relaxed">Relaxed</option>
+                    <option value="Impish">Impish</option>
+                    <option value="Lax">Lax</option>
+                    <option value="Timid">Timid</option>
+                    <option value="Hasty">Hasty</option>
+                    <option value="Serious">Serious</option>
+                    <option value="Jolly">Jolly</option>
+                    <option value="Naive">Naive</option>
+                    <option value="Modest">Modest</option>
+                    <option value="Mild">Mild</option>
+                    <option value="Quiet">Quiet</option>
+                    <option value="Bashful">Bashful</option>
+                    <option value="Rash">Rash</option>
+                    <option value="Calm">Calm</option>
+                    <option value="Gentle">Gentle</option>
+                    <option value="Sassy">Sassy</option>
+                    <option value="Careful">Careful</option>
+                    <option value="Quirky">Quirky</option>
+                </optgroup>
+            </select>
+        </div>
 
-            <div>
-                <p>Target Pokemon's Species Strengths</p>
-                <table border="1">
-                    <tr>
-                        <th>HP</th>
-                        <th>ATK</th>
-                        <th>DEF</th>
-                        <th>SP.ATK</th>
-                        <th>SP.DEF</th>
-                        <th>SPEED</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="ss_hp" id="ss_hp"></td>
-                        <td><input type="text" name="ss_atk" id="ss_atk"></td>
-                        <td><input type="text" name="ss_def" id="ss_def"></td>
-                        <td><input type="text" name="ss_sp_atk" id="ss_sp_atk"></td>
-                        <td><input type="text" name="ss_sp_def" id="ss_sp_def"></td>
-                        <td><input type="text" name="ss_speed" id="ss_speed"></td>
-                    </tr>
-                </table>
-            </div>
-
+        <div>
+            <p>Target Pokemon's Species Strengths</p>
+            <table border="1">
+                <tr>
+                    <th>HP</th>
+                    <th>ATK</th>
+                    <th>DEF</th>
+                    <th>SP.ATK</th>
+                    <th>SP.DEF</th>
+                    <th>SPEED</th>
+                </tr>
+                <tr>
+                    <td id="ss_hp"></td>
+                    <td id="ss_atk"></td>
+                    <td id="ss_def"></td>
+                    <td id="ss_sp_atk"></td>
+                    <td id="ss_sp_def"></td>
+                    <td id="ss_speed"></td>
+                </tr>
+            </table>
+        </div>
 
 
 
-            <div>
-                <p>Fill Your Statistic</p>
-                <table border="1">
-                    <tr>
-                        <th>HP</th>
-                        <th>ATK</th>
-                        <th>DEF</th>
-                        <th>SP.ATK</th>
-                        <th>SP.DEF</th>
-                        <th>SPEED</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="stats_hp" id="stats_hp"></td>
-                        <td><input type="text" name="stats_atk" id="stats_atk"></td>
-                        <td><input type="text" name="stats_def" id="stats_def"></td>
-                        <td><input type="text" name="stats_sp_atk" id="stats_sp_atk"></td>
-                        <td><input type="text" name="stats_sp_def" id="stats_sp_def"></td>
-                        <td><input type="text" name="stats_speed" id="stats_speed"></td>
-                    </tr>
-                </table>
-            </div>
 
-            <div>
-                <p>Fill Your Base Points</p>
-                <table border="1">
-                    <tr>
-                        <th>HP</th>
-                        <th>ATK</th>
-                        <th>DEF</th>
-                        <th>SP.ATK</th>
-                        <th>SP.DEF</th>
-                        <th>SPEED</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="ev_hp" id="ev_hp"></td>
-                        <td><input type="text" name="ev_atk" id="ev_atk"></td>
-                        <td><input type="text" name="ev_def" id="ev_def"></td>
-                        <td><input type="text" name="ev_sp_atk" id="ev_sp_atk"></td>
-                        <td><input type="text" name="ev_sp_def" id="ev_sp_def"></td>
-                        <td><input type="text" name="ev_speed" id="ev_speed"></td>
-                    </tr>
-                </table>
-            </div>
-
+        <div>
+            <p>Fill Your Statistic</p>
+            <table border="1">
+                <tr>
+                    <th>HP</th>
+                    <th>ATK</th>
+                    <th>DEF</th>
+                    <th>SP.ATK</th>
+                    <th>SP.DEF</th>
+                    <th>SPEED</th>
+                </tr>
+                <tr>
+                    <td><input type="number" name="stats_hp" id="stats_hp"></td>
+                    <td><input type="number" name="stats_atk" id="stats_atk"></td>
+                    <td><input type="number" name="stats_def" id="stats_def"></td>
+                    <td><input type="number" name="stats_sp_atk" id="stats_sp_atk"></td>
+                    <td><input type="number" name="stats_sp_def" id="stats_sp_def"></td>
+                    <td><input type="number" name="stats_speed" id="stats_speed"></td>
+                </tr>
+            </table>
             <br>
+            <span class="error" id="statsError">
+                Please enter non-negative integer for HP/ATK/DEF/SP.ATK/SP.DEF/SPEED of Statistic
+            </span>
+        </div>
+
+        <div>
+            <p>Fill Your Base Points</p>
+            <table border="1">
+                <tr>
+                    <th>HP</th>
+                    <th>ATK</th>
+                    <th>DEF</th>
+                    <th>SP.ATK</th>
+                    <th>SP.DEF</th>
+                    <th>SPEED</th>
+                </tr>
+                <tr>
+                    <td><input type="number" name="ev_hp" id="ev_hp"></td>
+                    <td><input type="number" name="ev_atk" id="ev_atk"></td>
+                    <td><input type="number" name="ev_def" id="ev_def"></td>
+                    <td><input type="number" name="ev_sp_atk" id="ev_sp_atk"></td>
+                    <td><input type="number" name="ev_sp_def" id="ev_sp_def"></td>
+                    <td><input type="number" name="ev_speed" id="ev_speed"></td>
+                </tr>
+            </table>
             <br>
+            <span class="error" id="evError">
+                Please enter integer from 0 to 252 for HP/ATK/DEF/SP.ATK/SP.DEF/SPEED of Base Points. The sum of all Base Points should smaller or equal to 510
+            </span>
+        </div>
 
-            <div>
-                <input type="button" value="Submit" id="submit">
-            </div>
-        </form>
+        <br>
+        <br>
 
-        <form>
-            <div>
-                <p>Result:</p>
-                <table border="1">
-                    <tr>
-                        <th>HP</th>
-                        <th>ATK</th>
-                        <th>DEF</th>
-                        <th>SP.ATK</th>
-                        <th>SP.DEF</th>
-                        <th>SPEED</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="iv_hp" id="iv_hp"></td>
-                        <td><input type="text" name="iv_atk" id="iv_atk"></td>
-                        <td><input type="text" name="iv_def" id="iv_def"></td>
-                        <td><input type="text" name="iv_sp_atk" id="iv_sp_atk"></td>
-                        <td><input type="text" name="iv_sp_def" id="iv_sp_def"></td>
-                        <td><input type="text" name="iv_speed" id="iv_speed"></td>
-                    </tr>
-                </table>
-            </div>
+        <div>
+            <input type="button" value="Submit" id="submit">
+        </div>
 
+        <div>
+            <p>Result:</p>
+            <table border="1">
+                <tr>
+                    <th>HP</th>
+                    <th>ATK</th>
+                    <th>DEF</th>
+                    <th>SP.ATK</th>
+                    <th>SP.DEF</th>
+                    <th>SPEED</th>
+                </tr>
+                <tr>
+                    <td id="iv_hp"></td>
+                    <td id="iv_atk"></td>
+                    <td id="iv_def"></td>
+                    <td id="iv_sp_atk"></td>
+                    <td id="iv_sp_def"></td>
+                    <td id="iv_speed"></td>
+                </tr>
+            </table>
             <br>
-            <br>
+            <span class="error hidden" id="ivError">
+                Invalid IV. Please enter the correct Statistics of your Pokemon
+            </span>
+        </div>
 
-            <div>
-                <input type="button" value="Return to Menu" id="return_menu">
-            </div>
+        <br>
+        <br>
 
-        </form>
+        <div>
+            <input type="button" value="Return to Menu" id="return_menu">
+        </div>
 
     </body>
 
