@@ -15,6 +15,7 @@ function atkcheckForm(event) {
             $("#firstpoke").before("<p class='error'>error! you need fill in all the attack pokemon data</p>");
             firstpokemon=false;
         }
+        e.preventDefault();
     }
     else{
         $("p:contains('all the attack pokemon data')").remove();
@@ -25,6 +26,7 @@ function atkcheckForm(event) {
             $("#firstpoke").before("<p class='error'>error! Attack pokemon data must be positive</p>");
             firstnag=false;
         }
+        e.preventDefault();
     }
     else{
         $("p:contains('Attack pokemon data must be positive')").remove();
@@ -43,6 +45,7 @@ function atkcheckForm(event) {
             $("#secondpokemon").before("<p class='error'>error! you need fill in all the defend pokemon data</p>");
             secondpokemon=false;
         }
+        e.preventDefault();
     }
     else{
         $("p:contains('all the defend pokemon data')").remove();
@@ -53,11 +56,16 @@ function atkcheckForm(event) {
             $("#secondpokemon").before("<p class='error'>error! Defend pokemon data must be positive</p>");
             secondnag=false;
         }
+        e.preventDefault();
     }
     else{
         $("p:contains('Defend pokemon data must be positive')").remove();
         secondnag=true;
     }
  }
+ let $menu = $("#return_menu");
+$menu.click(function() {
+    window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
+});
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
