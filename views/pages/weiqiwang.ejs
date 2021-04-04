@@ -3,6 +3,8 @@
         <title>Damage Calculator</title>
     <head>
         <link rel="stylesheet" href="weiqiwang.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="weiqiwang.js" defer></script>
     </head>
     <body>
         <h1 class="medium">Damage Calculator Page</h1>
@@ -15,7 +17,7 @@
                 <option value="Charmander">Charmander</option>
             </select>
         </div>
-        <div class="medium">
+        <div class="medium" id="firstpoke">
             <table border="1" align="center">
                 <tr>
                     <th>HP</th>
@@ -26,12 +28,12 @@
                     <th>SPEED</th>
                 </tr>
                 <tr>
-                    <td><input type="number" name="stats1_hp" id="stats_hp"></td>
-                    <td><input type="number" name="stats1_atk" id="stats_atk"></td>
-                    <td><input type="number" name="stats1_def" id="stats_def"></td>
-                    <td><input type="number" name="stats1_sp_atk" id="stats_sp_atk"></td>
-                    <td><input type="number" name="stats1_sp_def" id="stats_sp_def"></td>
-                    <td><input type="number" name="stats1_speed" id="stats_speed"></td>
+                    <td><input type="number" name="stats1_hp" id="stats1_hp"></td>
+                    <td><input type="number" name="stats1_atk" id="stats1_atk"></td>
+                    <td><input type="number" name="stats1_def" id="stats1_def"></td>
+                    <td><input type="number" name="stats1_sp_atk" id="stats1_sp_atk"></td>
+                    <td><input type="number" name="stats1_sp_def" id="stats1_sp_def"></td>
+                    <td><input type="number" name="stats1_speed" id="stats1_speed"></td>
                 </tr>
             </table>
         </div>
@@ -43,7 +45,7 @@
             </select>
         </div>
 
-        <table align="center" border="1">
+        <table align="center" border="1" id="secondpokemon">
             <tr>
                 <th>HP</th>
                 <th>ATK</th>
@@ -53,12 +55,12 @@
                 <th>SPEED</th>
             </tr>
             <tr>
-                <td><input type="number" name="stats2_hp" id="stats_hp"></td>
-                <td><input type="number" name="stats2_atk" id="stats_atk"></td>
-                <td><input type="number" name="stats2_def" id="stats_def"></td>
-                <td><input type="number" name="stats2_sp_atk" id="stats_sp_atk"></td>
-                <td><input type="number" name="stats2_sp_def" id="stats_sp_def"></td>
-                <td><input type="number" name="stats2_speed" id="stats_speed"></td>
+                <td><input type="number" name="stats2_hp" id="stats2_hp"></td>
+                <td><input type="number" name="stats2_atk" id="stats2_atk"></td>
+                <td><input type="number" name="stats2_def" id="stats2_def"></td>
+                <td><input type="number" name="stats2_sp_atk" id="stats2_sp_atk"></td>
+                <td><input type="number" name="stats2_sp_def" id="stats2_sp_def"></td>
+                <td><input type="number" name="stats2_speed" id="stats2_speed"></td>
             </tr>
         </table>
         <p class="medium">Choose Skill</p>

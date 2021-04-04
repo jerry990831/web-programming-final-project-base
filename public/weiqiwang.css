@@ -14,6 +14,11 @@ p {
     font-size: 25px;
     color: var(--p-color);
 }
+.error{
+font-size: 20px;
+color:purple;
+text-align: center;
+}
 select {
     font-size: 20px;
 }
