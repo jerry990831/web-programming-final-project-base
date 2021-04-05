@@ -89,17 +89,19 @@
                     <th>SPEED</th>
                 </tr>
                 <tr>
-                    <td><input type="number" name="stats_hp" id="stats_hp"></td>
-                    <td><input type="number" name="stats_atk" id="stats_atk"></td>
-                    <td><input type="number" name="stats_def" id="stats_def"></td>
-                    <td><input type="number" name="stats_sp_atk" id="stats_sp_atk"></td>
-                    <td><input type="number" name="stats_sp_def" id="stats_sp_def"></td>
-                    <td><input type="number" name="stats_speed" id="stats_speed"></td>
+                    <td><input type="text" name="stats_hp" id="stats_hp"></td>
+                    <td><input type="text" name="stats_atk" id="stats_atk"></td>
+                    <td><input type="text" name="stats_def" id="stats_def"></td>
+                    <td><input type="text" name="stats_sp_atk" id="stats_sp_atk"></td>
+                    <td><input type="text" name="stats_sp_def" id="stats_sp_def"></td>
+                    <td><input type="text" name="stats_speed" id="stats_speed"></td>
                 </tr>
             </table>
             <br>
             <span class="error" id="statsError">
-                Please enter non-negative integer for HP/ATK/DEF/SP.ATK/SP.DEF/SPEED of Statistic
+                <strong>
+                    Please enter non-negative integer for HP/ATK/DEF/SP.ATK/SP.DEF/SPEED of Statistic
+                </strong>
             </span>
         </div>
 
@@ -115,17 +117,19 @@
                     <th>SPEED</th>
                 </tr>
                 <tr>
-                    <td><input type="number" name="ev_hp" id="ev_hp"></td>
-                    <td><input type="number" name="ev_atk" id="ev_atk"></td>
-                    <td><input type="number" name="ev_def" id="ev_def"></td>
-                    <td><input type="number" name="ev_sp_atk" id="ev_sp_atk"></td>
-                    <td><input type="number" name="ev_sp_def" id="ev_sp_def"></td>
-                    <td><input type="number" name="ev_speed" id="ev_speed"></td>
+                    <td><input type="text" name="ev_hp" id="ev_hp"></td>
+                    <td><input type="text" name="ev_atk" id="ev_atk"></td>
+                    <td><input type="text" name="ev_def" id="ev_def"></td>
+                    <td><input type="text" name="ev_sp_atk" id="ev_sp_atk"></td>
+                    <td><input type="text" name="ev_sp_def" id="ev_sp_def"></td>
+                    <td><input type="text" name="ev_speed" id="ev_speed"></td>
                 </tr>
             </table>
             <br>
             <span class="error" id="evError">
-                Please enter integer from 0 to 252 for HP/ATK/DEF/SP.ATK/SP.DEF/SPEED of Base Points. The sum of all Base Points should smaller or equal to 510
+                <strong>
+                    Please enter integer from 0 to 252 for HP/ATK/DEF/SP.ATK/SP.DEF/SPEED of Base Points. The sum of all Base Points should smaller or equal to 510
+                </strong>
             </span>
         </div>
 
@@ -158,7 +162,9 @@
             </table>
             <br>
             <span class="error hidden" id="ivError">
-                Invalid IV. Please enter the correct Statistics of your Pokemon
+                <strong>
+                    Invalid IV. Please enter the correct Statistics of your Pokemon
+                </strong>
             </span>
         </div>
 
