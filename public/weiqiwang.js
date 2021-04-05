@@ -39,7 +39,7 @@ function atkcheckForm(event) {
     let def2=document.querySelector("#stats2_def").value;
     let sp_atk2=document.querySelector("#stats2_sp_atk").value;
     let sp_def2=document.querySelector("#stats2_sp_def").value;
-    let speed2=document.querySelector("#stats1_speed").value;
+    let speed2=document.querySelector("#stats2_speed").value;
     if(hp2===""||atk2===""||def2===""||sp_atk2===""||sp_def2===""||speed2===""){
         if(secondpokemon){
             $("#secondpokemon").before("<p class='error'>error! you need fill in all the defend pokemon data</p>");
@@ -67,5 +67,5 @@ function atkcheckForm(event) {
 $menu.click(function() {
     window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
 });
- $("#firstpoke").click(atkcheckForm);
- $("#secondpokemon").click(defcheckForm);
+ $("#firstpoke").keyup(atkcheckForm);
+ $("#secondpokemon").keyup(defcheckForm);
