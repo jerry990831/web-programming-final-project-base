@@ -78,6 +78,7 @@ $("#sub").click(function(e) {
         $sumW.hide();
     }
 
+
 });
 
 let $menu = $("#menu");
