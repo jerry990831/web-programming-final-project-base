@@ -68,4 +68,6 @@ $menu.click(function() {
     window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
 });
  $("#firstpoke").keyup(atkcheckForm);
+ $("#firstpoke").click(atkcheckForm);
+ $("#secondpokemon").click(defcheckForm);
  $("#secondpokemon").keyup(defcheckForm);
