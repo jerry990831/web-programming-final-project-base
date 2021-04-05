@@ -58,14 +58,12 @@ th, td {
     background-color: orange;
     color: white;
     padding: 15px;
+    margin: 10px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     float: right;
     clear: both;
-    position: absolute;
-    bottom: 0%;
-    right: 1%;
  }
 
  .warning {
@@ -81,6 +79,13 @@ th, td {
  .warningSub {
      color: red;
      font-size: 16px;
+     text-align: center;
+     margin-top: 0px;
+ }
+
+ .hint {
+     color: black;
+     font-size: 14px;
      text-align: center;
      margin-top: 0px;
  }

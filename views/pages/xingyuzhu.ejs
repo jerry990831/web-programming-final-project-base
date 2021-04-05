@@ -56,6 +56,7 @@
     </table>
 
     <p class = "center">Fill Your Base Point</p>
+    <p class = "hint">All the data should be in the range from 0 to 252, and the total sum should not exceed 510.</p>
     <table>
         <tr>
             <th class = "borderS">HP</th>
@@ -67,41 +68,38 @@
         </tr>
         <tr>
             <td>
-                <input type = "number" name = "hp" class = "userinput" id = "hp">
+                <input type = "number" name = "hp" class = "userinput" id = "hp" max = "252">
                 <p id = "hpW" class = "warning" hidden>The number should be in the range 0 to 252</p>
             </td>
             <td>
-                <input type = "number" name = "atk" class = "userinput" id = "atk">
+                <input type = "number" name = "atk" class = "userinput" id = "atk" max = "252">
                 <p id = "atkW" class = "warning" hidden>The number should be in the range 0 to 252</p>
             </td>
             <td>
-                <input type = "number" name = "def" class = "userinput" id = "def">
+                <input type = "number" name = "def" class = "userinput" id = "def" max = "252">
                 <p id = "defW" class = "warning" hidden>The number should be in the range 0 to 252</p>
             </td>
             <td>
-                <input type = "number" name = "spAtk" class = "userinput" id = "spAtk">
+                <input type = "number" name = "spAtk" class = "userinput" id = "spAtk" max = "252">
                 <p id = "spAtkW" class = "warning" hidden>The number should be in the range 0 to 252</p>
             </td>
             <td>
-                <input type = "number" name = "spDef" class = "userinput" id = "spDef">
+                <input type = "number" name = "spDef" class = "userinput" id = "spDef" max = "252">
                 <p id = "spDefW" class = "warning" hidden>The number should be in the range 0 to 252</p>
             </td>
             <td>
-                <input type = "number" name = "speed" class = "userinput" id = "speed">
+                <input type = "number" name = "speed" class = "userinput" id = "speed" max = "252">
                 <p id = "speedW" class = "warning" hidden>The number should be in the range 0 to 252</p>
             </td>
         </tr>
     </table>
 
-    <form>
         <div class = "center">
             <input type = "submit" value = "Submit" class="submit" id = "sub">
             <p class = "warningSub" id = "empW" hidden>The field cannot be empty</p>
             <p class = "warningSub" id = "indvidualW" hidden>Individual value for each cell should be in the range 0 to 252</p>
             <p class = "warningSub" id = "sumW" hidden>The sum of all cells cannot exceed 510</p>
         </div>
-        
-    </form>
 
     <p class = "center">Result:</p>
     <table>
