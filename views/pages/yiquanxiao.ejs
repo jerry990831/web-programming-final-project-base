@@ -73,8 +73,12 @@
                 </tr>
             </table>
         </div>
+		<% results.forEach(function(r) { 
+			if(r.Pokemon == "Ivysaur"){%>
+		    <li><%= r.HP %> - <%= r.Atk %> </li>
+		<% }
+		}); %>
 		
-		<li><%= results.HP %> - <%= results.Atk %> </li>
 
 
 
