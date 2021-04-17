@@ -165,7 +165,7 @@ function damagecount(event){
         var result = $("<td></td>").text(damage);
         $("#damage_number").append(result);
     }
-
+}
  $("#firstpoke").keyup(atkcheckForm);
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
