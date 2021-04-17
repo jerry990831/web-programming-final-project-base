@@ -67,7 +67,26 @@ function atkcheckForm(event) {
 $menu.click(function() {
     window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
 });
+
+function modifyselect(){
+    var list;
+    $.ajax({
+        url:"/db",
+        async:false,
+        type:'GET',
+        success:function(data){
+            list=data;
+        }
+    });
+    $("option").remove();
+    for(var i=0;i<list.length;i++){
+        var option=$("<option></option>").text(list[i].Pokemon);
+        $("select").append(option);
+    }
+}
+
  $("#firstpoke").keyup(atkcheckForm);
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
  $("#secondpokemon").keyup(defcheckForm);
+ modifyselect()

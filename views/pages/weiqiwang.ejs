@@ -7,18 +7,40 @@
         <script type="text/javascript" src="weiqiwang.js" defer></script>
     </head>
     <body>
-        <h1 class="medium">Damage Calculator Page</h1>
-        <p class="medium">Choose ATK Pokemon and statistic</p>
-        <div class="medium">
-            <select class="medium">
-                <option value ="Bulbasaur">Bulbasaur</option>
-                <option value ="Ivysaur">Ivysaur</option>
-                <option value="Venusaur">Venusaur</option>
-                <option value="Charmander">Charmander</option>
-            </select>
-        </div>
-        <div class="medium" id="firstpoke">
-            <table border="1" align="center">
+        <form id="damage">
+            <h1 class="medium">Damage Calculator Page</h1>
+            <p class="medium">Choose ATK Pokemon and statistic</p>
+            <div class="medium">
+                <select class="medium" id = "pokemon_select1">
+                </select>
+            </div>
+            <div class="medium" id="firstpoke">
+                <table border="1" align="center">
+                    <tr>
+                        <th>HP</th>
+                        <th>ATK</th>
+                        <th>DEF</th>
+                        <th>SP.ATK</th>
+                        <th>SP.DEF</th>
+                        <th>SPEED</th>
+                    </tr>
+                    <tr>
+                        <td><input type="number" name="stats1_hp" id="stats1_hp"></td>
+                        <td><input type="number" name="stats1_atk" id="stats1_atk"></td>
+                        <td><input type="number" name="stats1_def" id="stats1_def"></td>
+                        <td><input type="number" name="stats1_sp_atk" id="stats1_sp_atk"></td>
+                        <td><input type="number" name="stats1_sp_def" id="stats1_sp_def"></td>
+                        <td><input type="number" name="stats1_speed" id="stats1_speed"></td>
+                    </tr>
+                </table>
+            </div>
+            <p class="medium">Choose DEF Pokemon and statistic</p>
+            <div class="medium">
+                <select class="medium" id="pokemon_select1">
+                </select>
+            </div>
+
+            <table align="center" border="1" id="secondpokemon">
                 <tr>
                     <th>HP</th>
                     <th>ATK</th>
@@ -28,66 +50,39 @@
                     <th>SPEED</th>
                 </tr>
                 <tr>
-                    <td><input type="number" name="stats1_hp" id="stats1_hp"></td>
-                    <td><input type="number" name="stats1_atk" id="stats1_atk"></td>
-                    <td><input type="number" name="stats1_def" id="stats1_def"></td>
-                    <td><input type="number" name="stats1_sp_atk" id="stats1_sp_atk"></td>
-                    <td><input type="number" name="stats1_sp_def" id="stats1_sp_def"></td>
-                    <td><input type="number" name="stats1_speed" id="stats1_speed"></td>
+                    <td><input type="number" name="stats2_hp" id="stats2_hp"></td>
+                    <td><input type="number" name="stats2_atk" id="stats2_atk"></td>
+                    <td><input type="number" name="stats2_def" id="stats2_def"></td>
+                    <td><input type="number" name="stats2_sp_atk" id="stats2_sp_atk"></td>
+                    <td><input type="number" name="stats2_sp_def" id="stats2_sp_def"></td>
+                    <td><input type="number" name="stats2_speed" id="stats2_speed"></td>
                 </tr>
             </table>
-        </div>
-        <p class="medium">Choose DEF Pokemon and statistic</p>
-        <div class="medium">
-            <select class="medium">
-                <option value ="Bulbasaur">Bulbasaur</option>
-
-            </select>
-        </div>
-
-        <table align="center" border="1" id="secondpokemon">
-            <tr>
-                <th>HP</th>
-                <th>ATK</th>
-                <th>DEF</th>
-                <th>SP.ATK</th>
-                <th>SP.DEF</th>
-                <th>SPEED</th>
-            </tr>
-            <tr>
-                <td><input type="number" name="stats2_hp" id="stats2_hp"></td>
-                <td><input type="number" name="stats2_atk" id="stats2_atk"></td>
-                <td><input type="number" name="stats2_def" id="stats2_def"></td>
-                <td><input type="number" name="stats2_sp_atk" id="stats2_sp_atk"></td>
-                <td><input type="number" name="stats2_sp_def" id="stats2_sp_def"></td>
-                <td><input type="number" name="stats2_speed" id="stats2_speed"></td>
-            </tr>
-        </table>
-        <p class="medium">Choose Skill</p>
-        <div class="medium">
-            <select> 
-                <option value ="Tackle">Tackle</option>
-            </select>
-        </div>
-        <table align="center" border="1">
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Power</th>
-                <th>Category</th>
-                <th>PP</th>
-            </tr>
-            <tr>
-                <td>Tackle</td>
-                <td>Normal</td>
-                <td>40</td>
-                <td>None</td>
-                <td>40</td>
-            </tr>
-        </table>
-        <div align="center">
-            <input type="button" value="Submit" id="submit">
-        </div>
+            <p class="medium">Choose Skill</p>
+            <div class="medium">
+                <select id = "skill"> 
+                </select>
+            </div>
+            <table align="center" border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Power</th>
+                    <th>Category</th>
+                    <th>PP</th>
+                </tr>
+                <tr>
+                    <td id="name"></td>
+                    <td id="type"></td>
+                    <td id="power"></td>
+                    <td id="category"></td>
+                    <td id="pp"></td>
+                </tr>
+            </table>
+            <div align="center">
+                <input type="submit" value="Submit" id="submit">
+            </div>
+        </form>
         <p class="medium">Result:</p>
         <div align="center">
             <input type="text" value="200" >
