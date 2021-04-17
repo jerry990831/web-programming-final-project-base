@@ -76,7 +76,8 @@
 
 		<ul>
 		    <% results.forEach(function(r) { %>
-				<% if(r == "Ivysaur"){%>
+				const str_test = <%= r.Pokemon %> 
+				<% if(str_test == "Ivysaur"){%>
 					<li><%= r.HP %> - <%= r.Atk %> </li>
 				<%}%>
 		    <% }); %>
