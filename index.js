@@ -224,7 +224,25 @@ express()
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM pokemon');
       const results = { 'results': (result) ? result.rows : null};
-      res.render('pages/db', results );
+	  
+	  let pokemon = [];
+	  for( let i=0; i<results.length; i++ ) {
+	      let r = results[i];
+	      pokemon.push({ no: r.NO,
+	                    pokemon: r.pokemon,
+	                    hp: r.HP,
+						atk: r.Atk,
+						def: r.Def,
+						sp_atk: r.SpA,
+						sp_def: r.SpD,
+						speed: r.Spe,
+						total: r.Total,
+	                    type1: r.Type1,
+	                    type2: r.Type2});
+	  }
+	  
+	  
+      res.render('pages/db', {pokemon: pokemon} );
       client.release();
     } catch (err) {
       console.error(err);
@@ -236,7 +254,6 @@ express()
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM pokemon');
       const results = { 'results': (result) ? result.rows : null};
-	  console.log(results.HP)
       res.render('pages/yiquanxiao', results );
       client.release();
     } catch (err) {

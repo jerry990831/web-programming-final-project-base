@@ -64,7 +64,7 @@
                     <th>SPEED</th>
                 </tr>
                 <tr>
-                    <td id="ss_hp"><%= results.HP %></td>
+                    <td id="ss_hp"></td>
                     <td id="ss_atk"></td>
                     <td id="ss_def"></td>
                     <td id="ss_sp_atk"></td>
@@ -73,7 +73,10 @@
                 </tr>
             </table>
         </div>
-
+		
+		<% pokemon.forEach(function(r) { %>
+		    <li><%= r.HP %> - <%= r.Atk %> </li>
+		<% }); %>
 
 
 

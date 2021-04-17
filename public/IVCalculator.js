@@ -1,3 +1,4 @@
+console.log(pokemon)
 // check whether user input valid Statistic
 // valid Species Strengths should be an non-negative integer 
 let statsValid = false;
