@@ -103,9 +103,39 @@ function modifyselect(){
         $("#skill").append(option);
     }
 }
+function showdetail(event){
+    var skilllist
+    $.ajax({
+        url:"/skill",
+        type:'GET',
+        dataType: 'json', 
+        async:false,
+        success:function(data){
+            skilllist=data;
+        }
+    });
+    $("#skill_detail").empty();
+    var index_chosen;
+    for(var i=0;i<skilllist.length;i++){
+        if(skilllist[i].Name==$("#skill").val()){
+            index_chosen=i;
+        }
+    }
+    var Name=$("<td></td>").text(skilllist[index_chosen].Name);
+    $("#skill_detail").append(Name);
+    var Type=$("<td></td>").text(skilllist[index_chosen].Type);
+    $("#skill_detail").append(Type);
+    var Power=$("<td></td>").text(skilllist[index_chosen].Power);
+    $("#skill_detail").append(Power);
+    var Category=$("<td></td>").text(skilllist[index_chosen].Category);
+    $("#skill_detail").append(Category);
+    var PP=$("<td></td>").text(skilllist[index_chosen].PP);
+    $("#skill_detail").append(PP);
 
+}
  $("#firstpoke").keyup(atkcheckForm);
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
  $("#secondpokemon").keyup(defcheckForm);
+ $("#skill").keyup(showdetail);
  modifyselect()
