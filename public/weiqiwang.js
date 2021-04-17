@@ -133,9 +133,47 @@ function showdetail(event){
     $("#skill_detail").append(PP);
 
 }
+
+function damagecount(event){
+    let atk1=document.querySelector("#stats1_atk").value;
+    let def1=document.querySelector("#stats1_def").value;
+    let sp_atk1=document.querySelector("#stats1_sp_atk").value;
+    let sp_def1=document.querySelector("#stats1_sp_def").value;
+    let atk2=document.querySelector("#stats2_atk").value;
+    let def2=document.querySelector("#stats2_def").value;
+    let sp_atk2=document.querySelector("#stats2_sp_atk").value;
+    let sp_def2=document.querySelector("#stats2_sp_def").value;
+    var skilllist
+    $.ajax({
+        url:"/skill",
+        type:'GET',
+        dataType: 'json', 
+        async:false,
+        success:function(data){
+            skilllist=data;
+        }
+    });
+    $("#skill_detail").empty();
+    var index_chosen;
+    for(var i=0;i<skilllist.length;i++){
+        if(skilllist[i].Name==$("#skill").val()){
+            index_chosen=i;
+        }
+    }
+    if(skilllist[index_chosen].Type=="Physical"){
+        var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*skilllist[index_chosen].Power+2)*1;
+        $("#damage_number").empty();
+        var result = $("<td></td>").text(damage);
+        $("#damage_number").append(result);
+    }
+    else{
+
+    }
+}
  $("#firstpoke").keyup(atkcheckForm);
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
  $("#secondpokemon").keyup(defcheckForm);
  $("#skill").change(showdetail);
+ $("#damage").submit(damagecount);
  modifyselect();
