@@ -79,8 +79,7 @@ function modifyselect(){
             list=data;
         }
     });
-    $("#pokemon_select1").remove();
-    $("#pokemon_select2").remove();
+    $("option").remove();
     for(var i=0;i<list.length;i++){
         var option=$("<option></option>").text(list[i].Pokemon);
         $("#pokemon_select1").append(option);
