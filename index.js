@@ -231,6 +231,18 @@ express()
       res.send("Error " + err);
     }
   })
+  .get('/yiquanxiao', async (req, res) => {
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM pokemon');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/yiquanxiao', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
   .get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
   .get('/xingyuzhu', (req, res) => res.render('pages/xingyuzhu'))
   .get('/yiquanxiao', (req, res) => res.render('pages/yiquanxiao'))

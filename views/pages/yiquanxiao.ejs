@@ -75,9 +75,9 @@
         </div>
 
 		<ul>
-		    results.forEach(function(r) { 
-		        <li><%= r.hp %> - <%= r.Atk %> </li>
-		    }); 
+		    <% results.forEach(function(r) { %>
+		        <li><%= r.HP %> - <%= r.Atk %> </li>
+		    <% }); %>
 		</ul>
 
 
