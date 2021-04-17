@@ -242,6 +242,17 @@ express()
       res.send("Error " + err);
     }
   })
+  .get('/skill',async(req,res)=>{
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM skill');
+      res.json( result.rows );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
   .get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
   .get('/xingyuzhu', (req, res) => res.render('pages/xingyuzhu'))
   .get('/yiquanxiao', (req, res) => res.render('pages/yiquanxiao'))

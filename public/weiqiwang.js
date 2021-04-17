@@ -79,6 +79,16 @@ function modifyselect(){
             list=data;
         }
     });
+    var skilllist
+    $.ajax({
+        url:"/skill",
+        type:'GET',
+        dataType: 'json', 
+        async:false,
+        success:function(data){
+            skilllist=data;
+        }
+    });
     $("option").remove();
     for(var i=0;i<list.length;i++){
         var option=$("<option></option>").text(list[i].Pokemon);
@@ -87,6 +97,10 @@ function modifyselect(){
     for(var i=0;i<list.length;i++){
         var option=$("<option></option>").text(list[i].Pokemon);
         $("#pokemon_select1").append(option);
+    }
+    for(var i=0;i<skilllist.length;i++){
+        var option=$("<option></option>").text(skilllist[i].Name);
+        $("#skill").append(option);
     }
 }
 
