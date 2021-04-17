@@ -72,17 +72,22 @@ function modifyselect(){
     var list;
     $.ajax({
         url:"/db",
-        async:false,
         type:'GET',
-        success:function(data){
-            list=data;
+        dataType: 'json', // added data type
+        success: function(res) {
+            for(let i =0; i<res.length; i++){
+				list.push(res[i]);
+			}
+			appendArray(list);
         }
     });
+    alert(list)
     $("option").remove();
     for(var i=0;i<list.length;i++){
         var option=$("<option></option>").text(list[i].Pokemon);
         $("select").append(option);
     }
+    
 }
 
  $("#firstpoke").keyup(atkcheckForm);
