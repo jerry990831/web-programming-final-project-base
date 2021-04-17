@@ -82,7 +82,6 @@ function modifyselect(){
         }
     });
     alert(JSON.stringify(list));
-    list=list["result"];
     $("option").remove();
     for(var i=0;i<list.length;i++){
         var option=$("<option></option>").text(list[i].Pokemon);
