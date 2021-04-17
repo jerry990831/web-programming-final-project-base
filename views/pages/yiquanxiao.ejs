@@ -64,7 +64,7 @@
                     <th>SPEED</th>
                 </tr>
                 <tr>
-                    <td id="ss_hp"></td>
+                    <td id="ss_hp"><%= results.HP %></td>
                     <td id="ss_atk"></td>
                     <td id="ss_def"></td>
                     <td id="ss_sp_atk"></td>
@@ -74,14 +74,7 @@
             </table>
         </div>
 
-		<ul>
-		    <% results.forEach(function(r) { %>
-				const str_test = <%= r.Pokemon %> 
-				<% if(str_test == "Ivysaur"){%>
-					<li><%= r.HP %> - <%= r.Atk %> </li>
-				<%}%>
-		    <% }); %>
-		</ul>
+
 
 
         <div>
