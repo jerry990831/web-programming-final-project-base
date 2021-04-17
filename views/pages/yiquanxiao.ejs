@@ -76,7 +76,9 @@
 
 		<ul>
 		    <% results.forEach(function(r) { %>
-		        <li><%= r.HP %> - <%= r.Atk %> </li>
+				<% if(r == "Ivysaur"){%>
+					<li><%= r.HP %> - <%= r.Atk %> </li>
+				<%}%>
 		    <% }); %>
 		</ul>
 
