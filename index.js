@@ -271,7 +271,7 @@ express()
       }
       
       
-      res.render('pages/db', {pokemon: pokemon} );
+      res.render('pages/yiquanxiao', {pokemon: pokemon} );
       client.release();
     } catch (err) {
       console.error(err);
