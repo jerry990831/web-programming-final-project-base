@@ -79,11 +79,11 @@ function modifyselect(){
             list=data;
         }
     });
-    alert(JSON.stringify(list));
     $("option").remove();
     for(var i=0;i<list.length;i++){
         var option=$("<option></option>").text(list[i].Pokemon);
-        $("select").append(option);
+        $("#pokemon_select1").append(option);
+        $("#pokemon_select2").append(option);
     }
     
 }
