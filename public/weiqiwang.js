@@ -74,11 +74,9 @@ function modifyselect(){
         url:"/pokemon",
         type:'GET',
         dataType: 'json', 
-        success: function(res) {
-            for(let i =0; i<res.length; i++){
-				list.push(res[i]);
-			}
-			appendArray(list);
+        async:false,
+        success:function(data){
+            list=data;
         }
     });
     alert(JSON.stringify(list));

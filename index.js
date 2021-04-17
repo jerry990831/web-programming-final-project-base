@@ -235,7 +235,7 @@ express()
     try {
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM pokemon');
-      res.json( result );
+      res.json( result.rows );
       client.release();
     } catch (err) {
       console.error(err);
