@@ -159,16 +159,13 @@ function damagecount(event){
             index_chosen=i;
         }
     }
-    if(skilllist[index_chosen].Type=="Physical"){
+    if(skilllist[index_chosen].Category=="Physical"){
         var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*parseInt(skilllist[index_chosen].Power)+2)*1;
         $("#damage_number").empty();
         var result = $("<td></td>").text(damage);
         $("#damage_number").append(result);
     }
-    else{
 
-    }
-}
  $("#firstpoke").keyup(atkcheckForm);
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
