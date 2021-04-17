@@ -153,7 +153,6 @@ function damagecount(event){
             skilllist=data;
         }
     });
-    $("#skill_detail").empty();
     var index_chosen;
     for(var i=0;i<skilllist.length;i++){
         if(skilllist[i].Name==$("#skill").val()){
@@ -161,7 +160,7 @@ function damagecount(event){
         }
     }
     if(skilllist[index_chosen].Type=="Physical"){
-        var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*skilllist[index_chosen].Power+2)*1;
+        var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*parseInt(skilllist[index_chosen].Power)+2)*1;
         $("#damage_number").empty();
         var result = $("<td></td>").text(damage);
         $("#damage_number").append(result);
