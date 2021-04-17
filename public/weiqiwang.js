@@ -73,7 +73,7 @@ function modifyselect(){
     $.ajax({
         url:"/db",
         type:'GET',
-        dataType: 'json', // added data type
+        dataType: 'json', 
         success: function(res) {
             for(let i =0; i<res.length; i++){
 				list.push(res[i]);
