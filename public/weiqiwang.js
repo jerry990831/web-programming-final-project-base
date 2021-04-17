@@ -137,5 +137,5 @@ function showdetail(event){
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
  $("#secondpokemon").keyup(defcheckForm);
- $("#skill").keyup(showdetail);
- modifyselect()
+ $("#skill").change(showdetail);
+ modifyselect();
