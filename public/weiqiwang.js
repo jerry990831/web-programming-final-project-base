@@ -175,5 +175,5 @@ function damagecount(event){
  $("#secondpokemon").click(defcheckForm);
  $("#secondpokemon").keyup(defcheckForm);
  $("#skill").change(showdetail);
- $("#damage").click(damagecount);
+ $("#submit").click(damagecount);
  modifyselect();
