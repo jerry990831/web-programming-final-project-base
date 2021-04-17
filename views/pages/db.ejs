@@ -8,10 +8,11 @@
 
 <div class="container">
 <h2>Database Results</h2>
-<% console.log("pokemon");%>
-<% console.log(pokemon); %>
+
 <ul>
-     <li><%= pokemon[3].hp %> - <%= pokemon[3].atk %> </li>
+    <% pokemon.forEach(function(r) { %>
+        <li><%= r.hp %> - <%= r.Atk %> </li>
+    <% }); %>
 </ul>
 
 </div>
