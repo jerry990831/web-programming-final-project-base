@@ -2,6 +2,9 @@ let firstpokemon = true;
 let firstnag = true;
 let secondpokemon = true;
 let secondnag = true;
+let submit = false;
+
+
 function atkcheckForm(event) {
     let hp1 = document.querySelector("#stats1_hp").value;
     let atk1=document.querySelector("#stats1_atk").value;
@@ -15,22 +18,26 @@ function atkcheckForm(event) {
             $("#firstpoke").before("<p class='error'>error! you need fill in all the attack pokemon data</p>");
             firstpokemon=false;
         }
+        submit = false;
         event.preventDefault();
     }
     else{
         $("p:contains('all the attack pokemon data')").remove();
         firstpokemon=true;
+        submit = true;
     }
     if(parseInt(hp1)<=0||parseInt(atk1)<=0||parseInt(def1)<=0||parseInt(sp_def1)<=0||parseInt(sp_atk1)<=0||parseInt(speed1)<=0){
         if(firstnag){
             $("#firstpoke").before("<p class='error'>error! Attack pokemon data must be positive</p>");
             firstnag=false;
         }
+        submit = false;
         event.preventDefault();
     }
     else{
         $("p:contains('Attack pokemon data must be positive')").remove();
         firstnag=true;
+        submit = true;
     }
  }
  function defcheckForm(event){
@@ -45,22 +52,26 @@ function atkcheckForm(event) {
             $("#secondpokemon").before("<p class='error'>error! you need fill in all the defend pokemon data</p>");
             secondpokemon=false;
         }
+        submit = false;
         event.preventDefault();
     }
     else{
         $("p:contains('all the defend pokemon data')").remove();
         secondpokemon=true;
+        submit = true;
     }
     if(parseInt(hp2)<=0||parseInt(atk2)<=0||parseInt(def2)<=0||parseInt(sp_def2)<=0||parseInt(sp_atk2)<=0||parseInt(speed2)<=0){
         if(secondnag){
             $("#secondpokemon").before("<p class='error'>error! Defend pokemon data must be positive</p>");
             secondnag=false;
         }
+        submit = false;
         event.preventDefault();
     }
     else{
         $("p:contains('Defend pokemon data must be positive')").remove();
         secondnag=true;
+        submit = true;
     }
  }
  let $menu = $("#return_menu");
@@ -104,34 +115,38 @@ function modifyselect(){
     }
 }
 function showdetail(event){
-    var skilllist
-    $.ajax({
-        url:"/skill",
-        type:'GET',
-        dataType: 'json', 
-        async:false,
-        success:function(data){
-            skilllist=data;
+    if (submit){
+        var skilllist
+        $.ajax({
+            url:"/skill",
+            type:'GET',
+            dataType: 'json', 
+            async:false,
+            success:function(data){
+                skilllist=data;
+            }
+        });
+        $("#skill_detail").empty();
+        var index_chosen;
+        for(var i=0;i<skilllist.length;i++){
+            if(skilllist[i].Name==$("#skill").val()){
+                index_chosen=i;
+            }
         }
-    });
-    $("#skill_detail").empty();
-    var index_chosen;
-    for(var i=0;i<skilllist.length;i++){
-        if(skilllist[i].Name==$("#skill").val()){
-            index_chosen=i;
-        }
+        var Name=$("<td></td>").text(skilllist[index_chosen].Name);
+        $("#skill_detail").append(Name);
+        var Type=$("<td></td>").text(skilllist[index_chosen].Type);
+        $("#skill_detail").append(Type);
+        var Power=$("<td></td>").text(skilllist[index_chosen].Power);
+        $("#skill_detail").append(Power);
+        var Category=$("<td></td>").text(skilllist[index_chosen].Category);
+        $("#skill_detail").append(Category);
+        var PP=$("<td></td>").text(skilllist[index_chosen].PP);
+        $("#skill_detail").append(PP);
     }
-    var Name=$("<td></td>").text(skilllist[index_chosen].Name);
-    $("#skill_detail").append(Name);
-    var Type=$("<td></td>").text(skilllist[index_chosen].Type);
-    $("#skill_detail").append(Type);
-    var Power=$("<td></td>").text(skilllist[index_chosen].Power);
-    $("#skill_detail").append(Power);
-    var Category=$("<td></td>").text(skilllist[index_chosen].Category);
-    $("#skill_detail").append(Category);
-    var PP=$("<td></td>").text(skilllist[index_chosen].PP);
-    $("#skill_detail").append(PP);
-
+    else{
+        alert("error, you need to fill all data in correct way!");
+    }
 }
 
 function damagecount(event){
