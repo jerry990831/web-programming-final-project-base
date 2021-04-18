@@ -1,4 +1,3 @@
-const e = require("express");
 
 let firstpokemon = true;
 let firstnag = true;
