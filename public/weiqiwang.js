@@ -1,3 +1,5 @@
+const e = require("express");
+
 let firstpokemon = true;
 let firstnag = true;
 let secondpokemon = true;
@@ -115,7 +117,6 @@ function modifyselect(){
     }
 }
 function showdetail(event){
-    if (submit){
         var skilllist
         $.ajax({
             url:"/skill",
@@ -143,42 +144,43 @@ function showdetail(event){
         $("#skill_detail").append(Category);
         var PP=$("<td></td>").text(skilllist[index_chosen].PP);
         $("#skill_detail").append(PP);
-    }
-    else{
-        alert("error, you need to fill all data in correct way!");
-    }
 }
 
 function damagecount(event){
-    let atk1=document.querySelector("#stats1_atk").value;
-    let def1=document.querySelector("#stats1_def").value;
-    let sp_atk1=document.querySelector("#stats1_sp_atk").value;
-    let sp_def1=document.querySelector("#stats1_sp_def").value;
-    let atk2=document.querySelector("#stats2_atk").value;
-    let def2=document.querySelector("#stats2_def").value;
-    let sp_atk2=document.querySelector("#stats2_sp_atk").value;
-    let sp_def2=document.querySelector("#stats2_sp_def").value;
-    var skilllist
-    $.ajax({
-        url:"/skill",
-        type:'GET',
-        dataType: 'json', 
-        async:false,
-        success:function(data){
-            skilllist=data;
+    if (submit){
+        let atk1=document.querySelector("#stats1_atk").value;
+        let def1=document.querySelector("#stats1_def").value;
+        let sp_atk1=document.querySelector("#stats1_sp_atk").value;
+        let sp_def1=document.querySelector("#stats1_sp_def").value;
+        let atk2=document.querySelector("#stats2_atk").value;
+        let def2=document.querySelector("#stats2_def").value;
+        let sp_atk2=document.querySelector("#stats2_sp_atk").value;
+        let sp_def2=document.querySelector("#stats2_sp_def").value;
+        var skilllist
+        $.ajax({
+            url:"/skill",
+            type:'GET',
+            dataType: 'json', 
+            async:false,
+            success:function(data){
+                skilllist=data;
+            }
+        });
+        var index_chosen;
+        for(var i=0;i<skilllist.length;i++){
+            if(skilllist[i].Name==$("#skill").val()){
+                index_chosen=i;
+            }
         }
-    });
-    var index_chosen;
-    for(var i=0;i<skilllist.length;i++){
-        if(skilllist[i].Name==$("#skill").val()){
-            index_chosen=i;
+        if(skilllist[index_chosen].Category=="Physical"){
+            var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*parseInt(skilllist[index_chosen].Power)+2)*1;
+            $("#damage_number").empty();
+            var result = $("<td></td>").text(damage);
+            $("#damage_number").append(result);
         }
     }
-    if(skilllist[index_chosen].Category=="Physical"){
-        var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*parseInt(skilllist[index_chosen].Power)+2)*1;
-        $("#damage_number").empty();
-        var result = $("<td></td>").text(damage);
-        $("#damage_number").append(result);
+    else{
+        alert("error, you need to fill all data in correct way!");
     }
 }
  $("#firstpoke").keyup(atkcheckForm);
