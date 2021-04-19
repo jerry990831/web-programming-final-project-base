@@ -242,6 +242,11 @@ express()
       res.send("Error " + err);
     }
   })
+  .post('/pokemon', function(req, res) {
+  	  console.log(req.body);
+  	  entreeList.push(req.body);
+  	  res.sendStatus(201);
+  })
   .get('/skill',async(req,res)=>{
     try {
       const client = await pool.connect();
