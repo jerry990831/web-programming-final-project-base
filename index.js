@@ -246,7 +246,7 @@ express()
 	  try {
 		const name = req.body.pokemon_name;
 	    const client = await pool.connect();
-		await client.query("UPDATE pokemon SET Pokemon='" + pokemon_name + "' where NO=" + 21);
+		await client.query("UPDATE pokemon SET Pokemon='" + name + "' where NO=" + 21);
 		
 	    //const result = await client.query('SELECT * FROM pokemon');
 		console.log(req.body);
