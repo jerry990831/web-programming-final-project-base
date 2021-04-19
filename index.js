@@ -245,8 +245,10 @@ express()
   .get('/design_pokemon', async(req, res)=> {
 	  const pokemon_name = (req.query.name) ? req.query.name : "";
   	  console.log(pokemon_name);
+	  console.log(pokemon_name);
+	  console.log(pokemon_name);
   	  //entreeList.push(req.body);
-  	  res.sendStatus(201);
+  	  //res.sendStatus(201);
   })
   .get('/skill',async(req,res)=>{
     try {
