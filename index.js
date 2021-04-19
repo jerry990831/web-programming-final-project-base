@@ -242,7 +242,7 @@ express()
       res.send("Error " + err);
     }
   })
-  .post('/design_pokemon', async(req, res)=> {
+  .get('/design_pokemon', async(req, res)=> {
 	  const pokemon_name = (req.query.name) ? req.query.name : "";
   	  console.log(pokemon_name);
   	  //entreeList.push(req.body);
