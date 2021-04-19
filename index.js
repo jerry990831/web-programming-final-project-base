@@ -243,10 +243,10 @@ express()
     }
   })
   .post('/sql', async(req, res)=> {
+	  const name = req.body.Pokemon
 	  const client = await pool.connect();
-	  await client.query("UPDATE pokemon SET \"Pokemon\"= 'HAHAHA' WHERE id = 21");
+	  await client.query("UPDATE pokemon SET \"Pokemon\"= '"+ "name' WHERE id = 21");
 	  
-  	  console.log(req.body.Pokemon);
 	  console.log(req.body);
   	  //entreeList.push(req.body);
 	  client.release();
