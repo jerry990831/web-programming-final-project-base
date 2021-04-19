@@ -255,10 +255,65 @@ function evSpeedCheck(){
     }
 }
 
-
+// return to menu
 $("#return_menu").click(function() {
     window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
 });
+
+
+// update available Pokemon and Nature
+let pokemons;  // store all pokemon info
+let natures;  // store all nature info
+updateData();
+
+function updateData(){
+    // request latest Pokemon and Nature info
+    $.ajax({
+        url:"/pokemon",
+        type:'GET',
+        dataType: 'json', 
+        async:false,
+        success:function(data){
+            pokemons = data;
+        }
+    });
+    $.ajax({
+        url:"/nature",
+        type:'GET',
+        dataType: 'json', 
+        async:false,
+        success:function(data){
+            natures = data;
+        }
+    });
+
+    // remove current data
+    $("option").remove();
+
+    // update pokemon info
+    for(let i = 0;i < pokemons.length; i++){
+        let pokemon = $("<option></option>").text(pokemons[i].Pokemon);
+        $("#pokemon").append(pokemon);
+    }
+    // update pokemon Species Strengths info
+    for(let i = 0; i < pokemons.length; i++){
+        if(pokemons[i].Pokemon == $("#pokemon").val()){
+            $("#ss_hp").text(pokemons[i].HP)
+            $("#ss_atk").text(pokemons[i].Atk)
+            $("#ss_def").text(pokemons[i].Def)
+            $("#ss_sp_atk").text(pokemons[i].SpA)
+            $("#ss_sp_def").text(pokemons[i].SpD)
+            $("#ss_speed").text(pokemons[i].Spe)
+        }
+    }
+
+    // update nature info
+    for(let i = 0;i < natures.length; i++){
+        let nature = $("<option></option>").text(natures[i].Nature);
+        $("#skill").append(nature);
+    }
+}
+
 
 
 
