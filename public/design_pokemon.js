@@ -128,7 +128,7 @@ $(document).ready(function() {
 				SpD:$("#stats_sp_def").val(),
 				Spe:$("#stats_speed").val(),
 		 };
-		 console.log(entree);
+		 console.log(pokemon);
 		 
 		 $.ajax({
 		 	url: "/pokemon",

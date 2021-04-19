@@ -242,9 +242,9 @@ express()
       res.send("Error " + err);
     }
   })
-  .post('/pokemon', function(req, res) {
+  .post('/pokemon', async(req, res)=> {
   	  console.log(req.body);
-  	  entreeList.push(req.body);
+  	  //entreeList.push(req.body);
   	  res.sendStatus(201);
   })
   .get('/skill',async(req,res)=>{
