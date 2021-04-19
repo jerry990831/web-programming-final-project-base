@@ -245,9 +245,13 @@ express()
   .post('/pokemon', async(req, res)=> {
 	  const first_name = (req.query.name) ? req.query.name : "";
 	  const last_name = (req.query.last) ? req.query.last : "";
+	  const client = await pool.connect();
+	  await client.query("UPDATE pokemon SET 'Pokemon'= 'KIM22131' WHERE id = 21");
+	  
   	  console.log(req.body);
 	  console.log(req.body);
   	  //entreeList.push(req.body);
+	  client.release();
   	  res.sendStatus(201);
   })
   .get('/skill',async(req,res)=>{
