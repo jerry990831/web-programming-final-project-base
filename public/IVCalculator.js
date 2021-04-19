@@ -332,11 +332,11 @@ function updateSpeciesStrength(){
 $("#submit").click(calculateIV);
 
 function calculateHpIV(stats, lv, ss, ev){
-    return (100 / lv) * (stats - lv - 10) - 2 * ss - (ev / 4);
+    return Math.floor((100 / lv) * (stats - lv - 10) - 2 * ss - Math.floor(ev / 4));
 }
 
 function calculateOtherIV(stats, lv, ss, ev, nature_affect){
-    return (100 / lv) * ((stats / nature_affect) - 5) - 2 * ss - (ev / 4);
+    return Math.floor((100 / lv) * ((stats / nature_affect) - 5) - 2 * ss - Math.floor(ev / 4));
 }
 
 function allValid(){
@@ -415,14 +415,6 @@ function calculateIV(){
         $("#iv_sp_atk").text(sp_atk_iv);
         $("#iv_sp_def").text(sp_def_iv);
         $("#iv_speed").text(speed_iv);
-
-        console.log($("stats_hp").val());
-        console.log($("ss_hp").text());
-        console.log($("ev_hp").val());
-        console.log(parseInt($("#stats_hp").val(), 10));
-        console.log(parseInt($("#ss_hp").text(), 10));
-        console.log(parseInt($("#ev_hp").val(), 10));
-        console.log(hp_iv);
 
         // check whether IV is valid. If not, then Stats(user input) must be incorrect
         $("#ivError").removeClass("hidden");
