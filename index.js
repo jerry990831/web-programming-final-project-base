@@ -244,12 +244,12 @@ express()
   })
   .post('/sql', async(req, res)=> {
 	  let pokemon_name = req.body.Pokemon
-	  let hp = req.body.HP
-	  let atk = req.body.Atk
-	  let def = req.body.Def
-	  let sp_atk = req.body.SpA
-	  let sp_def = req.body.SpD
-	  let speed = req.body.Spe
+	  let hp = Number(req.body.HP)
+	  let atk = Number(req.body.Atk)
+	  let def = Number(req.body.Def)
+	  let sp_atk = Number(req.body.SpA)
+	  let sp_def = Number(req.body.SpD)
+	  let speed = Number(req.body.Spe)
 	  //let total = Number(hp + atk + def + sp_atk + sp_def)
 	  const client = await pool.connect();
 	  const query = "INSERT INTO pokemon(\"Pokemon\") VALUES(" + "'" + pokemon_name + "'" +");"
