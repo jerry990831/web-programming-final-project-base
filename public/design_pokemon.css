@@ -25,27 +25,13 @@ p{
 	font: "bodoni mt black";
 	color: #f16365;
 }
-ul {
-	list-style: none;
-}
-ul li{
-	width: 350px;
-	background: #f19ba7;
-	padding: 40px;
-	border-top: 5px solid #DFDFDF;
-}
-ul li a{
-	text-decoration: dashed;
-	color: #FFFFFF;
-	font: "bodoni mt black";
-	font-size: 20px;
-	text-transform: uppercase;
-	text-shadow: 0 0 1px;
-}
-ul li:hover{
-	opacity: 0.8;
-	margin-left: 10px;
-}
+table { 
+    margin-right: auto;
+    margin-left: auto;
+    height: 100px;
+    width: 1000px;
+    border-collapse: collapse; 
+} 
 
 th, td {
     text-align: center;
