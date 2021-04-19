@@ -244,8 +244,8 @@ express()
   })
   .post('/pokemon', async(req, res)=> {
 	  try {
-		const name = req.body.pokemonname;
-		console.log(name)
+		// const name = req.body.pokemonname;
+		// console.log(name)
 	 //    const client = await pool.connect();
 		// await client.query("UPDATE pokemon SET Pokemon=" + name + "where NO=" + 21);
 		
