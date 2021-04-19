@@ -101,6 +101,7 @@ $(document).ready(function() {
 		    type: "POST",
 			data: pokemon,
 		    success: function(msg){
+				console.log("Success");
 				//add option to the list in client side
 				// let option = document.createElement("option");
 				// let txt = document.createTextNode(entree.name);
