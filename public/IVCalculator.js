@@ -295,22 +295,18 @@ function updateData(){
         let pokemon = $("<option></option>").text(pokemons[i].Pokemon);
         $("#pokemon").append(pokemon);
     }
-    // update pokemon Species Strengths info
-    for(let i = 0; i < pokemons.length; i++){
-        if(pokemons[i].Pokemon == $("#pokemon").val()){
-            $("#ss_hp").text(pokemons[i].HP)
-            $("#ss_atk").text(pokemons[i].Atk)
-            $("#ss_def").text(pokemons[i].Def)
-            $("#ss_sp_atk").text(pokemons[i].SpA)
-            $("#ss_sp_def").text(pokemons[i].SpD)
-            $("#ss_speed").text(pokemons[i].Spe)
-        }
-    }
+    // update default pokemon Species Strengths info
+    $("#ss_hp").text(pokemons[0].HP)
+    $("#ss_atk").text(pokemons[0].Atk)
+    $("#ss_def").text(pokemons[0].Def)
+    $("#ss_sp_atk").text(pokemons[0].SpA)
+    $("#ss_sp_def").text(pokemons[0].SpD)
+    $("#ss_speed").text(pokemons[0].Spe)
 
     // update nature info
     for(let i = 0;i < natures.length; i++){
         let nature = $("<option></option>").text(natures[i].Nature);
-        $("#skill").append(nature);
+        $("#nature").append(nature);
     }
 }
 
