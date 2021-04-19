@@ -413,7 +413,7 @@ function calculateIV(){
         $("#iv_atk").text(atk_iv);
         $("#iv_def").text(def_iv);
         $("#iv_sp_atk").text(sp_atk_iv);
-        $("#iv_def").text(sp_def_iv);
+        $("#iv_sp_def").text(sp_def_iv);
         $("#iv_speed").text(speed_iv);
 
         // check whether IV is valid. If not, then Stats(user input) must be incorrect
