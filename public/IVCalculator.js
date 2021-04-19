@@ -313,6 +313,7 @@ function updateData(){
 
 //update species strength info after user select a pokemon
 $("#show_pokemon").change(updateSpeciesStrength);
+$("#show_nature").change(test);
 
 function updateSpeciesStrength(){
     console.log("event trgger!");
@@ -332,6 +333,10 @@ function updateSpeciesStrength(){
             $("#ss_speed").text(pokemons[i].Spe);
         }
     }
+}
+
+function test(){
+    console.log("event trigger!");
 }
 
 
