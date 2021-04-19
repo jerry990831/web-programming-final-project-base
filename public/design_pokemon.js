@@ -85,17 +85,17 @@ $("#sub").click(function(e) {
 $(document).ready(function() {
 	 //add button event
 	 $("#addBtn").click(function() {
-		 // const pokemon = {
-			// 	NO: 25,
-			// 	Pokemon: $("#pokemon_name").val(),
-			// 	HP:$("#stats_hp").val(),
-			// 	Atk:$("#stats_atk").val(),
-			// 	Def:$("#stats_def").val(),
-			// 	SpA:$("#stats_sp_atk").val(),
-			// 	SpD:$("#stats_sp_def").val(),
-			// 	Spe:$("#stats_speed").val(),
-		 // };
-		 // console.log(pokemon);
+		 const pokemon = {
+				NO: 25,
+				Pokemon: $("#pokemon_name").val(),
+				HP:$("#stats_hp").val(),
+				Atk:$("#stats_atk").val(),
+				Def:$("#stats_def").val(),
+				SpA:$("#stats_sp_atk").val(),
+				SpD:$("#stats_sp_def").val(),
+				Spe:$("#stats_speed").val(),
+		 };
+		 console.log(pokemon);
 		 
 		 $.ajax({
 		 	url: "/pokemon",
