@@ -312,13 +312,16 @@ function updateData(){
 
 
 //update species strength info after user select a pokemon
-$("#pokemon").change(updateSpeciesStrength);
-console.log($("#pokemon").val());
-console.log($("#show_pokemon").val());
-function updateSpeciesStrength(event){
+$("#show_pokemon").change(updateSpeciesStrength);
+
+function updateSpeciesStrength(){
     console.log("event trgger!");
+    console.log("selected pokemon:");
+    console.log($("show_pokemon").val());
+    console.log("pokemons:");
+    console.log(pokemons);
     for(let i = 0; i < pokemons.length; i++){
-        if(pokemons[i].Pokemon == $("#pokemon").val()){
+        if(pokemons[i].Pokemon == $("show_pokemon").val()){
             console.log("pokemon:");
             console.log(pokemons[i].Pokemon);
             $("#ss_hp").text(pokemons[i].HP);
