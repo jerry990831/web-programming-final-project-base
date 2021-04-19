@@ -291,7 +291,7 @@ function updateData(){
     $("option").remove();
 
     // update pokemon info
-    for(let i = 0;i < pokemons.length; i++){
+    for(let i = 0; i < pokemons.length; i++){
         let pokemon = $("<option></option>").text(pokemons[i].Pokemon);
         $("#pokemon").append(pokemon);
     }
@@ -304,7 +304,7 @@ function updateData(){
     $("#ss_speed").text(pokemons[0].Spe);
 
     // update nature info
-    for(let i = 0;i < natures.length; i++){
+    for(let i = 0; i < natures.length; i++){
         let nature = $("<option></option>").text(natures[i].Nature);
         $("#nature").append(nature);
     }
@@ -315,7 +315,7 @@ function updateData(){
 $("#show_pokemon").change(updateSpeciesStrength);
 
 function updateSpeciesStrength(event){
-    for(let i = 0; i < pokemons.length; i){
+    for(let i = 0; i < pokemons.length; i++){
         if(pokemons[i].Pokemon == $("#show_pokemon").val()){
             $("#ss_hp").text(pokemons[i].HP);
             $("#ss_atk").text(pokemons[i].Atk);
