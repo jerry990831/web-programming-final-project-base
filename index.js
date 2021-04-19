@@ -244,7 +244,7 @@ express()
   })
   .post('/sql', async(req, res)=> {
 	  const client = await pool.connect();
-	  await client.query("UPDATE pokemon SET 'Pokemon'= 'KIM22131' WHERE id = 21");
+	  await client.query("UPDATE pokemon SET \"Pokemon\"= 'test' WHERE id = 21");
 	  
   	  console.log(req.body);
 	  console.log(req.body);
