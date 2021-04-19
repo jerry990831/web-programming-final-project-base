@@ -244,6 +244,8 @@ express()
   })
   .post('/pokemon', async(req, res)=> {
   	  console.log(req.body);
+	  console.log(req.body);
+	  console.log(req.body);
   	  //entreeList.push(req.body);
   	  res.sendStatus(201);
   })
