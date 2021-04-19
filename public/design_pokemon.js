@@ -136,11 +136,11 @@ $(document).ready(function() {
 			data: pokemon,
 		    success: function(msg){
 				//add option to the list in client side
-				#let option = document.createElement("option");
-				#let txt = document.createTextNode(entree.name);
-				#option.appendChild(txt);
-				#option.setAttribute("id",entree.id);
-				#$('select').append(option);
+				// let option = document.createElement("option");
+				// let txt = document.createTextNode(entree.name);
+				// option.appendChild(txt);
+				// option.setAttribute("id",entree.id);
+				// $('select').append(option);
 				alert("added")
 				
 				//blank the input field
