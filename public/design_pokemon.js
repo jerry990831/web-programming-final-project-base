@@ -1,10 +1,4 @@
-//declare variables
-let $about = $("#about");
-let $stat_calculator = $("#stat_calculator");
-let $iv_calculator = $("#iv_calculator");
-let $damage_calculator = $("#damage_calculator");
-let $design_pokemon = $("#design_pokemon");
-let $return_menu = $("#return_menu");
+
 // check whether user input valid Statistic
 // valid Species Strengths should be an non-negative integer 
 let statsValid = false;
@@ -15,6 +9,7 @@ let statsSpAtkValid = false;
 let statsSpDefValid = false;
 let statsSpeedValid = false;
 let $statsError = $("#statsError");
+let $return_menu = $("#return_menu");
 
 $("#stats_hp").keyup(statsHpCheck);
 $("#stats_atk").keyup(statsAtkCheck);
@@ -126,16 +121,6 @@ $("#return_menu").click(function() {
 });
 
 
-//AJAX get pokemon
-$.ajax({
-            url:"/pokemon",
-            type:'GET',
-            dataType: 'json', 
-            async:false,
-            success:function(data){
-                skilllist=data;
-            }
-        });
 		
 //Button events
 $(document).ready(function() {
