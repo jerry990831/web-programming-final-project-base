@@ -243,8 +243,8 @@ express()
     }
   })
   .post('/pokemon', async(req, res)=> {
-  	  console.log(req.body);
-	  console.log(req.body);
+	  const pokemon_name = (req.query.name) ? req.query.name : "";
+  	  console.log(pokemon_name);
   	  //entreeList.push(req.body);
   	  res.sendStatus(201);
   })
