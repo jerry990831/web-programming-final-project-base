@@ -329,7 +329,7 @@ function updateSpeciesStrength(){
 
 
 // calculate IV:
-
+$("#submit").click(calculateIV);
 
 function calculateHpIV(stats, lv, ss, ev){
     return (100 / lv) * (stats - lv - 10) - 2 * ss - (ev / 4);
