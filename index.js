@@ -256,7 +256,7 @@ express()
 	  const query_text = "INSERT INTO pokemon(\"Pokemon\", \"HP\", \"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\")"
 	  query_text += " VALUES("+ "'" + pokemon_name +"'" +","+ hp + ","+ atk + ","+ def + ","+ sp_atk + ","+ sp_def + ","+ speed + ");"
 
-	  await client.query(query_text);
+	  await client.query(query);
 	  
 	  client.release();
   	  res.sendStatus(201);
