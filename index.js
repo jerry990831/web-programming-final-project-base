@@ -243,11 +243,22 @@ express()
     }
   })
   .post('/pokemon', async(req, res)=> {
-  	  console.log(req.body);
-	  console.log(req.body);
-	  console.log(req.body);
-  	  //entreeList.push(req.body);
-  	  res.sendStatus(201);
+	  try {
+		const name = req.body.pokemon_name;
+	    const client = await pool.connect();
+		await client.query("UPDATE pokemon SET Pokemon='" + pokemon_name + "' where NO=" + 21);
+		
+	    //const result = await client.query('SELECT * FROM pokemon');
+		console.log(req.body);
+		console.log(req.body);
+		console.log("enter");
+		//entreeList.push(req.body);
+	    client.release();
+		res.sendStatus(201);
+	  } catch (err) {
+	    console.error(err);
+	    res.send("Error " + err);
+	  }
   })
   .get('/skill',async(req,res)=>{
     try {
