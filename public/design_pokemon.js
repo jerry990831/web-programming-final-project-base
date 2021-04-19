@@ -1,118 +1,85 @@
-// check whether user input valid Statistic
-// valid Species Strengths should be an non-negative integer 
-let statsValid = false;
-let statsHpValid = false;
-let statsAtkValid = false;
-let statsDefValid = false;
-let statsSpAtkValid = false;
-let statsSpDefValid = false;
-let statsSpeedValid = false;
-let $statsError = $("#statsError");
+let $hp = $("#hp");
+let $atk = $("#atk");
+let $def = $("#def");
+let $spAtk = $("#spAtk");
+let $spDef = $("#spDef");
+let $speed = $("#speed");
 
-$("#stats_hp").keyup(statsHpCheck);
-$("#stats_atk").keyup(statsAtkCheck);
-$("#stats_def").keyup(statsDefCheck);
-$("#stats_sp_atk").keyup(statsSpAtkCheck);
-$("#stats_sp_def").keyup(statsSpDefCheck);
-$("#stats_speed").keyup(statsSpeedCheck);
-
-
-function statsHpCheck(){
-    val = $(this).val();
-    statsHpValid = false;
-    $statsError.removeClass("hidden");
-    //check if user input an integer
-    if(Math.floor(val) == val && $.isNumeric(val)){
-        num = parseInt(val, 10);
-        if(num >= 0){
-            statsHpValid = true;
-            if(statsAtkValid && statsDefValid && statsSpAtkValid && statsSpDefValid && statsSpeedValid){
-                $statsError.addClass("hidden");
-            }
-        }
+$hp.keyup(function(e) {
+    if($(this).val() >= 0 && $(this).val() <= 252 && $.isNumeric($(this).val())){
+        $("#hpW").hide();
+    }else {
+        $("#hpW").show();
+        e.preventDefault();
     }
-}
+});
 
-function statsAtkCheck(){
-    val = $(this).val();
-    statsAtkValid = false;
-    $statsError.removeClass("hidden");
-    //check if user input an integer
-    if(Math.floor(val) == val && $.isNumeric(val)){
-        num = parseInt(val, 10);
-        if(num >= 0){
-            statsAtkValid = true;
-            if(statsHpValid && statsDefValid && statsSpAtkValid && statsSpDefValid && statsSpeedValid){
-                $statsError.addClass("hidden");
-            }
-        }
+$atk.keyup(function(e) {
+    if($(this).val() >= 0 && $(this).val() <= 252 && $.isNumeric($(this).val())){
+        $("#atkW").hide();
+    }else {
+        $("#atkW").show();
+        e.preventDefault();
     }
-}
+});
 
-function statsDefCheck(){
-    val = $(this).val();
-    statsDefValid = false;
-    $statsError.removeClass("hidden");
-    //check if user input an integer
-    if(Math.floor(val) == val && $.isNumeric(val)){
-        num = parseInt(val, 10);
-        if(num >= 0){
-            statsDefValid = true;
-            if(statsAtkValid && statsHpValid && statsSpAtkValid && statsSpDefValid && statsSpeedValid){
-                $statsError.addClass("hidden");
-            }
-        }
+$def.keyup(function(e) {
+    if($(this).val() >= 0 && $(this).val() <= 252 && $.isNumeric($(this).val())){
+        $("#defW").hide();
+    }else {
+        $("#defW").show();
+        e.preventDefault();
     }
-}
+});
 
-function statsSpAtkCheck(){
-    val = $(this).val();
-    statsSpAtkValid = false;
-    $statsError.removeClass("hidden");
-    //check if user input an integer
-    if(Math.floor(val) == val && $.isNumeric(val)){
-        num = parseInt(val, 10);
-        if(num >= 0){
-            statsSpAtkValid = true;
-            if(statsAtkValid && statsDefValid && statsHpValid && statsSpDefValid && statsSpeedValid){
-                $statsError.addClass("hidden");
-            }
-        }
+$spAtk.keyup(function(e) {
+    if($(this).val() >= 0 && $(this).val() <= 252 && $.isNumeric($(this).val())){
+        $("#spAtkW").hide();
+    }else {
+        $("#spAtkW").show();
+        e.preventDefault();
     }
-}
+});
 
-function statsSpDefCheck(){
-    val = $(this).val();
-    statsSpDefValid = false;
-    $statsError.removeClass("hidden");
-    //check if user input an integer
-    if(Math.floor(val) == val && $.isNumeric(val)){
-        num = parseInt(val, 10);
-        if(num >= 0){
-            statsSpDefValid = true;
-            if(statsAtkValid && statsDefValid && statsSpAtkValid && statsHpValid && statsSpeedValid){
-                $statsError.addClass("hidden");
-            }
-        }
+$spDef.keyup(function(e) {
+    if($(this).val() >= 0 && $(this).val() <= 252 && $.isNumeric($(this).val())){
+        $("#spDefW").hide();
+    }else {
+        $("#spDefW").show();
+        e.preventDefault();
     }
-}
+});
 
-function statsSpeedCheck(){
-    val = $(this).val();
-    statsSpeedValid = false;
-    $statsError.removeClass("hidden");
-    //check if user input an integer
-    if(Math.floor(val) == val && $.isNumeric(val)){
-        num = parseInt(val, 10);
-        if(num >= 0){
-            statsSpeedValid = true;
-            if(statsAtkValid && statsDefValid && statsSpAtkValid && statsSpDefValid && statsHpValid){
-                $statsError.addClass("hidden");
-            }
-        }
+$speed.keyup(function(e) {
+    if($(this).val() >= 0 && $(this).val() <= 252 && $.isNumeric($(this).val())){
+        $("#speedW").hide();
+    }else {
+        $("#speedW").show();
+        e.preventDefault();
     }
-}
+});
 
+let $emptyW = $("#empW");
+let $indW = $("#indvidualW");
+let $sumW = $("#sumW");
+$("#sub").click(function(e) {
+    if(!$hp.val() || !$atk.val() || !$def.val() || !$spAtk.val() || !$spDef.val() || !$speed.val()){
+        $emptyW.show();
+        e.preventDefault();
+    }else {
+        $emptyW.hide();
+    }
+
+    if((parseInt($hp.val()) + parseInt($atk.val()) + parseInt($def.val()) + 
+        parseInt($spAtk.val()) + parseInt($spDef.val()) + parseInt($speed.val())) > 510) {
+        $sumW.show();
+        e.preventDefault();
+    }else {
+        $sumW.hide();
+    }
+
+
+});
 		
 //Button events
 $(document).ready(function() {
