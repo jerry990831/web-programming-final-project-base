@@ -416,6 +416,14 @@ function calculateIV(){
         $("#iv_sp_def").text(sp_def_iv);
         $("#iv_speed").text(speed_iv);
 
+        console.log($("stats_hp").val());
+        console.log($("ss_hp").val());
+        console.log($("ev_hp").val());
+        console.log(parseInt($("#stats_hp").val(), 10));
+        console.log(parseInt($("#ss_hp").val(), 10));
+        console.log(parseInt($("#ev_hp").val(), 10));
+        console.log(hp_iv);
+
         // check whether IV is valid. If not, then Stats(user input) must be incorrect
         $("#ivError").removeClass("hidden");
         if(ivCheck(hp_iv) && ivCheck(atk_iv) && ivCheck(def_iv) && ivCheck(sp_atk_iv) && ivCheck(sp_def_iv) && ivCheck(speed_iv)){
