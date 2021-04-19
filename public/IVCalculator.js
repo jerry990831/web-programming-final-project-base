@@ -296,12 +296,12 @@ function updateData(){
         $("#pokemon").append(pokemon);
     }
     // update default pokemon Species Strengths info
-    $("#ss_hp").text(pokemons[0].HP)
-    $("#ss_atk").text(pokemons[0].Atk)
-    $("#ss_def").text(pokemons[0].Def)
-    $("#ss_sp_atk").text(pokemons[0].SpA)
-    $("#ss_sp_def").text(pokemons[0].SpD)
-    $("#ss_speed").text(pokemons[0].Spe)
+    $("#ss_hp").text(pokemons[0].HP);
+    $("#ss_atk").text(pokemons[0].Atk);
+    $("#ss_def").text(pokemons[0].Def);
+    $("#ss_sp_atk").text(pokemons[0].SpA);
+    $("#ss_sp_def").text(pokemons[0].SpD);
+    $("#ss_speed").text(pokemons[0].Spe);
 
     // update nature info
     for(let i = 0;i < natures.length; i++){
@@ -310,6 +310,22 @@ function updateData(){
     }
 }
 
+
+//update species strength info after user select a pokemon
+$("#show_pokemon").change(updateSpeciesStrength);
+
+function updateSpeciesStrength(event){
+    for(let i = 0; i < pokemons.length; i){
+        if(pokemons[i].Pokemon == $("#show_pokemon").val()){
+            $("#ss_hp").text(pokemons[i].HP);
+            $("#ss_atk").text(pokemons[i].Atk);
+            $("#ss_def").text(pokemons[i].Def);
+            $("#ss_sp_atk").text(pokemons[i].SpA);
+            $("#ss_sp_def").text(pokemons[i].SpD);
+            $("#ss_speed").text(pokemons[i].Spe);
+        }
+    }
+}
 
 
 
