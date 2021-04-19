@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<script src="" defer></script>
-		<link rel="stylesheet" href="yicheng_menu.css">
+		<link rel="stylesheet" href="design_pokemon.css">
 		<script src="design_pokemon.js" defer></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.js"
 		        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
@@ -14,9 +14,12 @@
 		<h2>Design your own pokemon</h2>
 		<p> You can design your own pokemon in this web page.</p> 
 		<p> AKA. add a piece of data to SQL.</p>
-		
-		<p class = "center">Fill Your Base Point</p>
+		<p class = "hint">Name your own Pokemon: </p>
+		<input type = "text" class = "center-block">
+		<p></p>
 		<p class = "hint">All the data should be in the range from 0 to 252, and the total sum should not exceed 510.</p>
+		
+		
 		<table>
 		    <tr>
 		        <th class = "borderS">HP</th>
@@ -61,7 +64,7 @@
 		        <p class = "warningSub" id = "sumW" hidden>The sum of all cells cannot exceed 510</p>
 		    </div>
 		<div>
-		    <input class=submit type="button" value="Return to menu" id="menu">
+		    <input class=submit type="button" value="Return to menu" id="return_menu">
 		</div>
 	</body>
 </html>
