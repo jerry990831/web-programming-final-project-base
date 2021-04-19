@@ -98,7 +98,7 @@ $(document).ready(function() {
 		 console.log(pokemon);
 		 
 		 $.ajax({
-		 	url: "/pokemon",
+		 	url: "/sql",
 		    type: "POST",
 			data: pokemon,
 		    success: function(msg){

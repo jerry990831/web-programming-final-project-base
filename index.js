@@ -242,9 +242,7 @@ express()
       res.send("Error " + err);
     }
   })
-  .post('/pokemon', async(req, res)=> {
-	  const first_name = (req.query.name) ? req.query.name : "";
-	  const last_name = (req.query.last) ? req.query.last : "";
+  .post('/sql', async(req, res)=> {
 	  const client = await pool.connect();
 	  await client.query("UPDATE pokemon SET 'Pokemon'= 'KIM22131' WHERE id = 21");
 	  
