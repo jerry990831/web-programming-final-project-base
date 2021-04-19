@@ -280,6 +280,7 @@ express()
       res.send("Error " + err);
     }
   })
+  .get('/design_pokemon', (req, res) => res.render('pages/design_pokemon'))
   .get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
   .get('/xingyuzhu', (req, res) => res.render('pages/xingyuzhu'))
   .get('/yiquanxiao', (req, res) => res.render('pages/yiquanxiao'))
