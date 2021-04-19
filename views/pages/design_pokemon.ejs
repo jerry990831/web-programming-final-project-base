@@ -15,14 +15,12 @@
 		<p> You can design your own pokemon in this web page.</p> 
 		<p> AKA. add a piece of data to SQL.</p>
 		
-		<div>
-			<input type="text" id="pokemon_name" placeholder="Enter Pokemon Name here..." value =''>
-			<input type="button" value="Add" id="addBtn">
-		</div>
+		<p class = "hint">Name your own Pokemon: </p>
+		<input type="text" id="pokemon_name" placeholder="Enter Pokemon Name here..." class = "center-block" value =''>
+		<p></p>
 		
-		<p>Enter your name: </p>
 		<p class = "hint">All the data should be in the range from 0 to 252, and the total sum should not exceed 510.</p>
-		<table>
+		
 		    <tr>
 		        <th class = "borderS">HP</th>
 		        <th class = "borderS">ATK</th>
@@ -60,7 +58,7 @@
 		</table>
 		
 		    <div class = "center">
-		        <input type = "submit" value = "Submit" class="submit" id = "sub">
+		        <input type = "button" value = "Add" class="submit" id = "addBtn">
 		        <p class = "warningSub" id = "empW" hidden>The field cannot be empty</p>
 		        <p class = "warningSub" id = "indvidualW" hidden>Individual value for each cell should be in the range 0 to 252</p>
 		        <p class = "warningSub" id = "sumW" hidden>The sum of all cells cannot exceed 510</p>
