@@ -86,7 +86,6 @@ $(document).ready(function() {
 	 //add button event
 	 $("#addBtn").click(function() {
 		 const pokemon = {
-				NO: 25,
 				Pokemon: $("#pokemon_name").val(),
 				HP:$("#hp").val(),
 				Atk:$("#atk").val(),
