@@ -401,12 +401,12 @@ function calculateIV(){
         }
 
         // calculate IV
-        let hp_iv = calculateHpIV(parseInt($("#stats_hp").val(), 10), 100, parseInt($("#ss_hp").val(), 10), parseInt($("#ev_hp").val(), 10));
-        let atk_iv = calculateOtherIV(parseInt($("#stats_atk").val(), 10), 100, parseInt($("#ss_atk").val(), 10), parseInt($("#ev_atk").val(), 10), atk_aff);
-        let def_iv = calculateOtherIV(parseInt($("#stats_def").val(), 10), 100, parseInt($("#ss_def").val(), 10), parseInt($("#ev_def").val(), 10), def_aff);
-        let sp_atk_iv = calculateOtherIV(parseInt($("#stats_sp_atk").val(), 10), 100, parseInt($("#ss_sp_atk").val(), 10), parseInt($("#ev_sp_atk").val(), 10), sp_atk_aff);
-        let sp_def_iv = calculateOtherIV(parseInt($("#stats_sp_def").val(), 10), 100, parseInt($("#ss_sp_def").val(), 10), parseInt($("#ev_sp_def").val(), 10), sp_def_aff);
-        let speed_iv = calculateOtherIV(parseInt($("#stats_speed").val(), 10), 100, parseInt($("#ss_speed").val(), 10), parseInt($("#ev_speed").val(), 10), speed_aff);
+        let hp_iv = calculateHpIV(parseInt($("#stats_hp").val(), 10), 100, parseInt($("#ss_hp").text(), 10), parseInt($("#ev_hp").val(), 10));
+        let atk_iv = calculateOtherIV(parseInt($("#stats_atk").val(), 10), 100, parseInt($("#ss_atk").text(), 10), parseInt($("#ev_atk").val(), 10), atk_aff);
+        let def_iv = calculateOtherIV(parseInt($("#stats_def").val(), 10), 100, parseInt($("#ss_def").text(), 10), parseInt($("#ev_def").val(), 10), def_aff);
+        let sp_atk_iv = calculateOtherIV(parseInt($("#stats_sp_atk").val(), 10), 100, parseInt($("#ss_sp_atk").text(), 10), parseInt($("#ev_sp_atk").val(), 10), sp_atk_aff);
+        let sp_def_iv = calculateOtherIV(parseInt($("#stats_sp_def").val(), 10), 100, parseInt($("#ss_sp_def").text(), 10), parseInt($("#ev_sp_def").val(), 10), sp_def_aff);
+        let speed_iv = calculateOtherIV(parseInt($("#stats_speed").val(), 10), 100, parseInt($("#ss_speed").text(), 10), parseInt($("#ev_speed").val(), 10), speed_aff);
 
         // update output
         $("#iv_hp").text(hp_iv);
@@ -417,10 +417,10 @@ function calculateIV(){
         $("#iv_speed").text(speed_iv);
 
         console.log($("stats_hp").val());
-        console.log($("ss_hp").val());
+        console.log($("ss_hp").text());
         console.log($("ev_hp").val());
         console.log(parseInt($("#stats_hp").val(), 10));
-        console.log(parseInt($("#ss_hp").val(), 10));
+        console.log(parseInt($("#ss_hp").text(), 10));
         console.log(parseInt($("#ev_hp").val(), 10));
         console.log(hp_iv);
 
