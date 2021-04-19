@@ -243,12 +243,20 @@ express()
     }
   })
   .post('/sql', async(req, res)=> {
-	  const name = req.body.Pokemon
+	  let pokemon_name = req.body.Pokemon
+	  let hp = req.body.HP
+	  let atk = req.body.Atk
+	  let def = req.body.Def
+	  let sp_atk = req.body.SpA
+	  let sp_def = req.body.SpD
+	  let speed = req.body.Spe
+	  let total = hp + atk + def + sp_atk + sp_def
 	  const client = await pool.connect();
-	  await client.query("UPDATE pokemon SET \"Pokemon\"= '"+ name + "' WHERE id = 21");
+	  const query_text = "INSERT INTO pokemon(\"Pokemon\", \"HP\", \"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\",\"Total\")"
+	  query_text += "VALUES(" + hp + ","+ atk + ","+ def + ","+ sp_atk + ","+ sp_def + ","+ speed + ","+ total + ");"
+
+	  await client.query(query_text);
 	  
-	  console.log(req.body);
-  	  //entreeList.push(req.body);
 	  client.release();
   	  res.sendStatus(201);
   })
