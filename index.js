@@ -246,15 +246,15 @@ express()
 	  try {
 		const name = req.body.pokemonname;
 		console.log(name)
-	    const client = await pool.connect();
-		await client.query("UPDATE pokemon SET Pokemon=" + name + "where NO=" + 21);
+	 //    const client = await pool.connect();
+		// await client.query("UPDATE pokemon SET Pokemon=" + name + "where NO=" + 21);
 		
 	    //const result = await client.query('SELECT * FROM pokemon');
 		console.log(req.body);
 		console.log(req.body);
 		console.log("enter");
 		//entreeList.push(req.body);
-	    client.release();
+	    // client.release();
 		res.sendStatus(201);
 	  } catch (err) {
 	    console.error(err);
