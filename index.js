@@ -243,17 +243,17 @@ express()
     }
   })
   .post('/sql', async(req, res)=> {
-	  let pokemon_name = req.body.Pokemon;
-	  let hp = parseInt(req.body.HP);
-	  let atk = parseInt(req.body.Atk);
-	  let def = parseInt(req.body.Def);
-	  let sp_atk = parseInt(req.body.SpA);
-	  let sp_def = parseInt(req.body.SpD);
-	  let speed = parseInt(req.body.Spe);
-	  let total = hp + atk + def + sp_atk + sp_def;
+	  let pokemon_name = req.body.Pokemon
+	  let hp = parseInt(req.body.HP)
+	  let atk = parseInt(req.body.Atk)
+	  let def = parseInt(req.body.Def)
+	  let sp_atk = parseInt(req.body.SpA)
+	  let sp_def = parseInt(req.body.SpD)
+	  let speed = parseInt(req.body.Spe)
+	  let total = hp + atk + def + sp_atk + sp_def
 	  const client = await pool.connect();
-	  const query_text = "INSERT INTO pokemon(\"Pokemon\", \"HP\", \"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\",\"Total\")";
-	  query_text += "VALUES(" pokemon_name ","+ hp + ","+ atk + ","+ def + ","+ sp_atk + ","+ sp_def + ","+ speed + ","+ total + ");";
+	  const query_text = "INSERT INTO pokemon(\"Pokemon\", \"HP\", \"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\",\"Total\")"
+	  query_text += "VALUES(" + hp + ","+ atk + ","+ def + ","+ sp_atk + ","+ sp_def + ","+ speed + ","+ total + ");"
 
 	  await client.query(query_text);
 	  
