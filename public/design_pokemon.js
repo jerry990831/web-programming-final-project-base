@@ -1,4 +1,3 @@
-
 // check whether user input valid Statistic
 // valid Species Strengths should be an non-negative integer 
 let statsValid = false;
@@ -9,7 +8,6 @@ let statsSpAtkValid = false;
 let statsSpDefValid = false;
 let statsSpeedValid = false;
 let $statsError = $("#statsError");
-let $return_menu = $("#return_menu");
 
 $("#stats_hp").keyup(statsHpCheck);
 $("#stats_atk").keyup(statsAtkCheck);
@@ -115,12 +113,6 @@ function statsSpeedCheck(){
     }
 }
 
-
-$("#return_menu").click(function() {
-    window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
-});
-
-
 		
 //Button events
 $(document).ready(function() {
@@ -163,4 +155,6 @@ $(document).ready(function() {
 });
 
 
-
+$("#return_menu").click(function() {
+    window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
+});
