@@ -242,13 +242,13 @@ express()
       res.send("Error " + err);
     }
   })
-  .get('/design_pokemon', async(req, res)=> {
-	  const pokemon_name = (req.query.name) ? req.query.name : "";
-  	  console.log(pokemon_name);
-	  console.log(pokemon_name);
-	  console.log(pokemon_name);
+  .post('/pokemon', async(req, res)=> {
+	  const first_name = (req.query.name) ? req.query.name : "";
+	  const last_name = (req.query.last) ? req.query.last : "";
+  	  console.log(req.body);
+	  console.log(req.body);
   	  //entreeList.push(req.body);
-  	  //res.sendStatus(201);
+  	  res.sendStatus(201);
   })
   .get('/skill',async(req,res)=>{
     try {
