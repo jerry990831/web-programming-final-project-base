@@ -250,7 +250,7 @@ express()
 	  let sp_atk = req.body.SpA
 	  let sp_def = req.body.SpD
 	  let speed = req.body.Spe
-	  let total = hp + atk + def + sp_atk + sp_def +speed
+	  let total = parseInt(hp) + parseInt(atk) + parseInt(def) + parseInt(sp_atk) + parseInt(sp_def) +parseInt(speed)
 	  const client = await pool.connect();
 	  //const query_2 = "INSERT INTO pokemon(\"Pokemon\",\"HP\") VALUES('" + pokemon_name + "'" + "," + hp + ");"
 	  const query = "INSERT INTO pokemon(\"Pokemon\",\"HP\",\"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\",\"Total\") VALUES('" + pokemon_name + "'" + "," + hp + "," + atk + "," + def + "," + sp_atk + "," + sp_def + "," + speed + "," + total + ");"
