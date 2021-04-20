@@ -120,4 +120,4 @@ function showData() {
     });
 }
 
-$("#pokemon").change(sHowData);
+$("#pokemon").change(showData);
