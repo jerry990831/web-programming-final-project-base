@@ -215,9 +215,9 @@ function statsCal() {
 }
 
 function calculateHP(stat, base, iv) {
-    return ((stat * 2 + iv + base / 4) + 10 + 100);
+    return Math.floor((stat * 2 + iv + base / 4) + 10 + 100);
 }
 
 function calculateOther(stat, weight, base, iv) {
-    return ((stat * 2 + iv + base/4) + 5) * weight;
+    return Math.floor(((stat * 2 + iv + base/4) + 5) * weight);
 }
