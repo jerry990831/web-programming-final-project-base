@@ -88,33 +88,20 @@ $menu.click(function() {
 
 getAllSelect();
 function getAllSelect() {
-    var pokemon;
-    $.ajax({
-        url: "/pokemon",
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-            pokemon = data;
-        }
-    });
-    console.log(pokemon);
-
-    var nature;
-    $.ajax({
-        url: "/nature",
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-            nature = data;
-        }
+    $.get("/pokemon", function(pokemons) {
+        let $name = $("#pokemon");
+        console.log(pokemons);
+        pokemons.forEach(function(data) {
+            $name.append("<option value='" + data.No + "'>" + data.Pokemon + "</option>");
+        });
     });
 
-    pokemon.forEach(function(data) {
-        $("#pokemon").append("<option value='" + data.No + "'>" + data.Pokemon + "</option>");
-    });
-
-    nature.forEach(function(data) {
-        $("#nature").append("<option value = '" + data.f1 + "'>" + data.Nature + "</option>");
+    $.get("/nature", function(natures) {
+        let $nature = $("#nature");
+        console.log(natures);
+        natures.forEach(function(data) {
+            $nature.append("<option value='" + data.f1 + "'>" + data.Nature + "</option>");
+        });
     });
 }
 
