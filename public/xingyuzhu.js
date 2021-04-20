@@ -86,6 +86,7 @@ $menu.click(function() {
     window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
 });
 
+var nature;
 getAllSelect();
 function getAllSelect() {
     $.get("/pokemon", function(pokemons) {
@@ -98,18 +99,18 @@ function getAllSelect() {
     $.get("/nature", function(natures) {
         let $nature = $("#nature");
         natures.forEach(function(data) {
+            nature = data;
             $nature.append("<option>" + data.Nature + "</option>");
         });
     });
 }
+alert(nature);
 
 $("#pokemon").change(showData);
 function showData() {
-    console.log($("#pokemon").val());
     $.get("/pokemon", function(pokemons) {
         pokemons.forEach(function(data) {
             if(data.Pokemon == $("#pokemon").val()){
-                console.log(data.Pokemon);
                 $("#HP").text(data.HP);
                 $("#ATK").text(data.Atk);
                 $("#DEF").text(data.Def);
@@ -127,3 +128,9 @@ var def_input = $("#def").val();
 var spA_input = $("#spAtk").val();
 var spD_input = $("#spDef").val();
 var speed_input = $("#speed").val();
+
+$("#sub").click(statsCal);
+
+function statsCal() {
+    
+}
