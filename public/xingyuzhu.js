@@ -90,7 +90,6 @@ getAllSelect();
 function getAllSelect() {
     $.get("/pokemon", function(pokemons) {
         let $name = $("#pokemon");
-        console.log(pokemons);
         pokemons.forEach(function(data) {
             $name.append("<option value='" + data.No + "'>" + data.Pokemon + "</option>");
         });
@@ -98,10 +97,25 @@ function getAllSelect() {
 
     $.get("/nature", function(natures) {
         let $nature = $("#nature");
-        console.log(natures);
         natures.forEach(function(data) {
             $nature.append("<option value='" + data.f1 + "'>" + data.Nature + "</option>");
         });
     });
 }
 
+function showData() {
+    $.get("/pokemon", function(pokemons) {
+        pokemons.forEach(function(data) {
+            if(data.Pokemon == $("#pokemon").val()){
+                $("#hp").text(data.HP);
+                $("#atk").text(data.Atk);
+                $("#def").text(data.Def);
+                $("#sp_atk").text(data.SpA);
+                $("#sp_def").text(data.SpD);
+                $("#speed").text(data.Spe);
+            }
+        });
+    });
+}
+
+$("#pokemon").change(sHowData);
