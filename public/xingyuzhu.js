@@ -97,6 +97,7 @@ function getAllSelect() {
             pokemon = data;
         }
     });
+    console.log(pokemon);
 
     var nature;
     $.ajax({
