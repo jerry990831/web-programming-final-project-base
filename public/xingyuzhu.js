@@ -91,34 +91,39 @@ function getAllSelect() {
     $.get("/pokemon", function(pokemons) {
         let $name = $("#pokemon");
         pokemons.forEach(function(data) {
-            $name.append("<option value='" + data.No + "'>" + data.Pokemon + "</option>");
+            $name.append("<option>" + data.Pokemon + "</option>");
         });
     });
 
     $.get("/nature", function(natures) {
         let $nature = $("#nature");
         natures.forEach(function(data) {
-            $nature.append("<option value='" + data.f1 + "'>" + data.Nature + "</option>");
-        });
-    });
-}
-
-function showData() {
-    console.log($("#pokemon").val());
-    $.get("/pokemon", function(pokemons) {
-        pokemons.forEach(function(data) {
-            console.log(data.Pokemon);
-            if(data.Pokemon == $("#pokemon").val()){
-                console.log(data.Pokemon);
-                $("#hp").text(data.HP);
-                $("#atk").text(data.Atk);
-                $("#def").text(data.Def);
-                $("#sp_atk").text(data.SpA);
-                $("#sp_def").text(data.SpD);
-                $("#speed").text(data.Spe);
-            }
+            $nature.append("<option>" + data.Nature + "</option>");
         });
     });
 }
 
 $("#pokemon").change(showData);
+function showData() {
+    console.log($("#pokemon").val());
+    $.get("/pokemon", function(pokemons) {
+        pokemons.forEach(function(data) {
+            if(data.Pokemon == $("#pokemon").val()){
+                console.log(data.Pokemon);
+                $("#HP").text(data.HP);
+                $("#ATK").text(data.Atk);
+                $("#DEF").text(data.Def);
+                $("#sp_atk").text(data.SpA);
+                $("#sp_def").text(data.SpD);
+                $("#Speed").text(data.Spe);
+            }
+        });
+    });
+}
+
+var hp_input = $("#hp").val();
+var ark_input = $("#atk").val();
+var def_input = $("#def").val();
+var spA_input = $("#spAtk").val();
+var spD_input = $("#spDef").val();
+var speed_input = $("#speed").val();
