@@ -89,3 +89,7 @@ th, td {
      text-align: center;
      margin-top: 0px;
  }
+
+ select {
+     width: 150px;
+ }
