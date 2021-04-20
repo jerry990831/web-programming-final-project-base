@@ -148,7 +148,7 @@ express()
       for( let i=0; i<results.length; i++ ) {
           let o = results[i];
           orders.push({ timestamp: o.order_time,
-                        order: o.food_order,
+                        order: o.food_order, 
                         id: o.id,
                         first: o.first_name,
                         last: o.last_name, 
