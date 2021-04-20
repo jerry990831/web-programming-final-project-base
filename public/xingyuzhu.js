@@ -86,7 +86,6 @@ $menu.click(function() {
     window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
 });
 
-var nature;
 getAllSelect();
 function getAllSelect() {
     $.get("/pokemon", function(pokemons) {
@@ -99,18 +98,28 @@ function getAllSelect() {
     $.get("/nature", function(natures) {
         let $nature = $("#nature");
         natures.forEach(function(data) {
-            nature = data;
             $nature.append("<option>" + data.Nature + "</option>");
         });
     });
 }
-alert(nature);
 
+let hpS;
+let atkS;
+let defS;
+let spAS;
+let spDS;
+let speS;
 $("#pokemon").change(showData);
 function showData() {
     $.get("/pokemon", function(pokemons) {
         pokemons.forEach(function(data) {
             if(data.Pokemon == $("#pokemon").val()){
+                hpS = data.HP;
+                atkS = data.Atk;
+                defS = data.Atk;
+                spAS = data.SpA;
+                spDS = data.SpD;
+                speS = data.Spe;
                 $("#HP").text(data.HP);
                 $("#ATK").text(data.Atk);
                 $("#DEF").text(data.Def);
@@ -122,6 +131,8 @@ function showData() {
     });
 }
 
+console.log(hpS);
+
 var hp_input = $("#hp").val();
 var ark_input = $("#atk").val();
 var def_input = $("#def").val();
@@ -132,5 +143,43 @@ var speed_input = $("#speed").val();
 $("#sub").click(statsCal);
 
 function statsCal() {
+    let hpW = 1;
+    let atkW = 1;
+    let defW = 1;
+    let spAW = 1;
+    let spDW = 1;
+    let speW = 1;
+    $.get("/nature", function(natures) {
+        let $nature = $("#nature");
+        natures.forEach(function(data) {
+            if(data.Nature == $("#nature").val()) {
+                let increaseS = data["Increased stat"];
+                let decreaseS = data["Decreased stat"];
+                if(increaseS == "Attack") {
+                    atkW = 1.1;
+                }else if(increaseS == "Defense") {
+                    defW = 1.1;
+                }else if(increaseS == "Sp. Attack") {
+                    spAW = 1.1;
+                }else if(increaseS == "Sp. Defense") {
+                    spDW = 1.1;
+                }else if(increaseS == "Speed") {
+                    speW = 1.1;
+                }
+
+                if(decreaseS == "Attack") {
+                    atkW = 0.9;
+                }else if(decreaseS == "Defense") {
+                    defW = 0.9;
+                }else if(decreaseS == "Sp. Attack") {
+                    spAW = 0.9;
+                }else if(decreaseS == "Sp. Defense") {
+                    spDW = 0.9;
+                }else if(decreaseS == "Speed") {
+                    speW = 0.9;
+                }
+            }
+        });
+    });
     
 }
