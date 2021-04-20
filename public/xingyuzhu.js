@@ -104,9 +104,10 @@ function getAllSelect() {
 }
 
 function showData() {
+    console.log($("#pokemon").val());
     $.get("/pokemon", function(pokemons) {
-        $("#hp").text("11");
         pokemons.forEach(function(data) {
+            console.log(data.Pokemon);
             if(data.Pokemon == $("#pokemon").val()){
                 console.log(data.Pokemon);
                 $("#hp").text(data.HP);
