@@ -109,49 +109,51 @@ let defS;
 let spAS;
 let spDS;
 let speS;
+let pokemons;
 $("#pokemon").change(showData);
 function showData() {
-    $.get("/pokemon", function(pokemons) {
-        pokemons.forEach(function(data) {
-            if(data.Pokemon == $("#pokemon").val()){
-                hpS = data.HP;
-                atkS = data.Atk;
-                defS = data.Atk;
-                spAS = data.SpA;
-                spDS = data.SpD;
-                speS = data.Spe;
-                $("#HP").text(data.HP);
-                $("#ATK").text(data.Atk);
-                $("#DEF").text(data.Def);
-                $("#sp_atk").text(data.SpA);
-                $("#sp_def").text(data.SpD);
-                $("#Speed").text(data.Spe);
-            }
-        });
+    $.ajax({
+        url: "/pokemon",
+        type: "GET",
+        dataType: 'json', 
+        async: false,
+        success:function(data){
+            pokemons = data;
+        }
+    });
+    alert(pokemons);
+    pokemons.forEach(function(data) {
+        if(data.Pokemon == $("#pokemon").val()){
+            hpS = data.HP;
+            atkS = data.Atk;
+            defS = data.Atk;
+            spAS = data.SpA;
+            spDS = data.SpD;
+            speS = data.Spe;
+            $("#HP").text(data.HP);
+            $("#ATK").text(data.Atk);
+            $("#DEF").text(data.Def);
+            $("#sp_atk").text(data.SpA);
+            $("#sp_def").text(data.SpD);
+            $("#Speed").text(data.Spe);
+        }
     });
 }
 
 console.log(hpS);
 
-var hp_input = $("#hp").val();
-var ark_input = $("#atk").val();
-var def_input = $("#def").val();
-var spA_input = $("#spAtk").val();
-var spD_input = $("#spDef").val();
-var speed_input = $("#speed").val();
-
 $("#sub").click(statsCal);
 
 function statsCal() {
-    let hpW = 1;
-    let atkW = 1;
-    let defW = 1;
-    let spAW = 1;
-    let spDW = 1;
-    let speW = 1;
     $.get("/nature", function(natures) {
         let $nature = $("#nature");
         natures.forEach(function(data) {
+            let hpW = 1;
+            let atkW = 1;
+            let defW = 1;
+            let spAW = 1;
+            let spDW = 1;
+            let speW = 1;
             if(data.Nature == $("#nature").val()) {
                 let increaseS = data["Increased stat"];
                 let decreaseS = data["Decreased stat"];
@@ -181,5 +183,36 @@ function statsCal() {
             }
         });
     });
+
+    var hp_input = $("#hp").val();
+    var ark_input = $("#atk").val();
+    var def_input = $("#def").val();
+    var spA_input = $("#spAtk").val();
+    var spD_input = $("#spDef").val();
+    var speed_input = $("#speed").val();
+
+    $.get("/pokemon", function(pokemons) {
+        pokemons.forEach(function(data) {
+            if(data.Pokemon == $("#pokemon").val()){
+                lowerHP = calculateHP(data.HP, hp_input, 0);
+                upperHP = calculateHP(data.HP, hp_input, 31);
+                $("#hpF").text(lowerHP + " - " + upperHP);
+
+                $("#ATK").text(data.Atk);
+                $("#DEF").text(data.Def);
+                $("#sp_atk").text(data.SpA);
+                $("#sp_def").text(data.SpD);
+                $("#Speed").text(data.Spe);
+            }
+        });
+    });
     
+}
+
+function calculateHP(stat, base, iv) {
+    return ((stat * 2 + iv + base / 4) + 10 + 100);
+}
+
+function calculateOther(stat, weight, base, iv) {
+    return ((stat * 2 + iv + base/4) + 5) * weight;
 }
