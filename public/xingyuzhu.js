@@ -86,21 +86,50 @@ $menu.click(function() {
     window.location.href = "https://quiet-beyond-13399.herokuapp.com/yichengwang";
 });
 
+let pokemons;
+let natures;
+
 getAllSelect();
 function getAllSelect() {
-    $.get("/pokemon", function(pokemons) {
-        let $name = $("#pokemon");
-        pokemons.forEach(function(data) {
-            $name.append("<option>" + data.Pokemon + "</option>");
-        });
+    $.ajax({
+        url: "/pokemon",
+        type: "GET",
+        dataType: "json", 
+        async: false,
+        success:function(data){
+            pokemons = data;
+        }
     });
+    console.log(pokemons);
+    pokemons.forEach(function(data) {
+        $("#pokemon").append("<option>" + data.Pokemon + "</option>");
+    });
+    
+    // $.get("/pokemon", function(pokemons) {
+    //     let $name = $("#pokemon");
+    //     pokemons.forEach(function(data) {
+    //         $name.append("<option>" + data.Pokemon + "</option>");
+    //     });
+    // });
 
-    $.get("/nature", function(natures) {
-        let $nature = $("#nature");
-        natures.forEach(function(data) {
-            $nature.append("<option>" + data.Nature + "</option>");
-        });
+    $.ajax({
+        url: "/nature",
+        type: "GET",
+        dataType: "json", 
+        async: false,
+        success:function(data){
+            pokemons = data;
+        }
     });
+    natures.forEach(function(data) {
+        $("#nature").append("<option>" + data.Nature + "</option>");
+    });
+    // $.get("/nature", function(natures) {
+    //     let $nature = $("#nature");
+    //     natures.forEach(function(data) {
+    //         $nature.append("<option>" + data.Nature + "</option>");
+    //     });
+    // });
 }
 
 let hpS;
@@ -109,7 +138,6 @@ let defS;
 let spAS;
 let spDS;
 let speS;
-let pokemons;
 $("#pokemon").change(showData);
 function showData() {
     $.ajax({
