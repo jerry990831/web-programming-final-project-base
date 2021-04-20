@@ -252,7 +252,8 @@ express()
 	  let speed = req.body.Spe
 	  //let total = Number(hp + atk + def + sp_atk + sp_def)
 	  const client = await pool.connect();
-	  const query_2 = "INSERT INTO pokemon(\"Pokemon\",\"HP\") VALUES('" + pokemon_name + "'" + ",'" + hp + "');"
+	  const query_2 = "INSERT INTO pokemon(\"Pokemon\",\"HP\") VALUES('" + pokemon_name + "'" + "," + hp + ");"
+	  // const query_2 = "INSERT INTO pokemon(\"Pokemon\",\"HP\",\"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\") VALUES('" + pokemon_name + "'" + ",'" + hp + "');"
 	  // const query = "INSERT INTO pokemon(\"Pokemon\") VALUES(" + "'" + pokemon_name + "'" +");"
 	  // const query_text = "INSERT INTO pokemon(\"Pokemon\", \"HP\", \"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\")"
 	  // query_text += " VALUES("+ "'" + pokemon_name +"'" +","+ hp + ","+ atk + ","+ def + ","+ sp_atk + ","+ sp_def + ","+ speed + ");"
