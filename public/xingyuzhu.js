@@ -121,7 +121,6 @@ function showData() {
             pokemons = data;
         }
     });
-    alert(pokemons);
     pokemons.forEach(function(data) {
         if(data.Pokemon == $("#pokemon").val()){
             hpS = data.HP;
@@ -139,8 +138,8 @@ function showData() {
         }
     });
 }
-
-console.log(hpS);
+alert(pokemons);
+console.log(pokemons);
 
 $("#sub").click(statsCal);
 
