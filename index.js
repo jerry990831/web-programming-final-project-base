@@ -148,7 +148,7 @@ express()
       for( let i=0; i<results.length; i++ ) {
           let o = results[i];
           orders.push({ timestamp: o.order_time,
-                        order: o.food_order, 
+                        order: o.food_order,
                         id: o.id,
                         first: o.first_name,
                         last: o.last_name, 
@@ -242,6 +242,26 @@ express()
       res.send("Error " + err);
     }
   })
+  .post('/sql', async(req, res)=> {
+	  let pokemon_name = req.body.Pokemon
+	  let hp = req.body.HP
+	  let atk = req.body.Atk
+	  let def = req.body.Def
+	  let sp_atk = req.body.SpA
+	  let sp_def = req.body.SpD
+	  let speed = req.body.Spe
+	  //let total = Number(hp + atk + def + sp_atk + sp_def)
+	  const client = await pool.connect();
+	  const query_2 = "INSERT INTO pokemon(\"Pokemon\",\"HP\") VALUES('" + pokemon_name + "'" + ",'" + hp + "');"
+	  // const query = "INSERT INTO pokemon(\"Pokemon\") VALUES(" + "'" + pokemon_name + "'" +");"
+	  // const query_text = "INSERT INTO pokemon(\"Pokemon\", \"HP\", \"Atk\",\"Def\",\"SpA\",\"SpD\",\"Spe\")"
+	  // query_text += " VALUES("+ "'" + pokemon_name +"'" +","+ hp + ","+ atk + ","+ def + ","+ sp_atk + ","+ sp_def + ","+ speed + ");"
+
+	  await client.query(query_2);
+	  
+	  client.release();
+  	  res.sendStatus(201);
+  })
   .get('/skill',async(req,res)=>{
     try {
       const client = await pool.connect();
@@ -275,6 +295,7 @@ express()
       res.send("Error " + err);
     }
   })
+  .get('/design_pokemon', (req, res) => res.render('pages/design_pokemon'))
   .get('/weiqiwang', (req, res) => res.render('pages/weiqiwang'))
   .get('/xingyuzhu', (req, res) => res.render('pages/xingyuzhu'))
   .get('/yiquanxiao', (req, res) => res.render('pages/yiquanxiao'))

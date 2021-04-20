@@ -1,0 +1,99 @@
+:root {
+    --header-color: crimson;
+    --p-color: orangered;
+    --bg-color: seashell;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+h2 {
+	margin: 50px auto;
+	text-align: center;
+	text-shadow: -2px -2px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,1);
+	color: crimson;
+	opacity: 0.4;
+	font: 700 80px 'Bitter';
+	text-transform: uppercase;
+	text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+	    1px 5px 0 grey;
+}
+p{
+	margin: 50px auto;
+	text-align: center;
+	font: 700 30px 'Bitter';
+	font: "bodoni mt black";
+	color: #f16365;
+}
+table { 
+    margin-right: auto;
+    margin-left: auto;
+    height: 100px;
+    width: 1000px;
+    border-collapse: collapse; 
+} 
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+    justify-content: stretch;
+    width: 50px;
+    height: 20px;
+ }
+
+ #return_menu {
+    width: 200px;
+    background-color: orange;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    clear: both;
+ }
+
+ .warning {
+    color: red;
+    font-size: 16px;
+    width: 150px;
+    border: 1px solid red;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ .warningSub {
+     color: red;
+     font-size: 16px;
+     text-align: center;
+     margin-top: 0px;
+ }
+
+ .hint {
+     color: black;
+     font-size: 14px;
+     text-align: center;
+     margin-top: 0px;
+ }
+ .center {
+     text-align: center;
+ }
+ .submit {
+     width: 200px;
+     background-color: lightskyblue;
+     color: white;
+     padding: 15px;
+     margin: 10px 0;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ .center-block {
+   display: block;
+   margin-right: auto;
+   margin-left: auto;
+ }

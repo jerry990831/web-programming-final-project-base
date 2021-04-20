@@ -12,16 +12,12 @@
 
         <div>
             <p>Choose target Pokemon and Nature</p>
-            <select>
+            <select id="show_pokemon">
                 <optgroup label="Pokemon" id="pokemon">
-                    <option value ="Bulbasaur">Bulbasaur</option>
-                    <option value ="Ivysaur">Ivysaur</option>
-                    <option value="Venusaur">Venusaur</option>
-                    <option value="Charmander">Charmander</option>
                 </optgroup>
             </select>
 
-            <select>
+            <select id="show_nature">
                 <optgroup label="Nature" id="nature">
                     <option value="Hardy">Hardy</option>
                     <option value="Lonely">Lonely</option>
@@ -163,7 +159,7 @@
             <br>
             <span class="error hidden" id="ivError">
                 <strong>
-                    Invalid IV. Please enter the correct Statistics of your Pokemon
+                    Invalid IV. IV should be an Integer from 0 to 31. Please enter the correct Statistics of your Pokemon
                 </strong>
             </span>
         </div>

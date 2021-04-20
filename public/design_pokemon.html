@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="" defer></script>
+		<link rel="stylesheet" href="design_pokemon.css">
+		<script src="design_pokemon.js" defer></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"
+		        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+		        crossorigin="anonymous"></script>
+		<title></title>
+	</head>
+	<body>
+		<h2>Design your own pokemon</h2>
+		<p> You can design your own pokemon in this web page.</p> 
+		<p> AKA. add a piece of data to SQL.</p>
+		<p class = "hint">Name your own Pokemon: </p>
+		<input type = "text" class = "center-block">
+		<p></p>
+		<p class = "hint">All the data should be in the range from 0 to 252, and the total sum should not exceed 510.</p>
+		
+		
+		<table>
+		    <tr>
+		        <th class = "borderS">HP</th>
+		        <th class = "borderS">ATK</th>
+		        <th class = "borderS">DEF</th>
+		        <th class = "borderS">SP.ATK</th>
+		        <th class = "borderS">SP.DEF</th>
+		        <th class = "borderS">SPEED</th>
+		    </tr>
+		    <tr>
+		        <td>
+		            <input type = "number" name = "hp" class = "userinput" id = "hp" max = "252">
+		            <p id = "hpW" class = "warning" hidden>The number should be in the range 0 to 252</p>
+		        </td>
+		        <td>
+		            <input type = "number" name = "atk" class = "userinput" id = "atk" max = "252">
+		            <p id = "atkW" class = "warning" hidden>The number should be in the range 0 to 252</p>
+		        </td>
+		        <td>
+		            <input type = "number" name = "def" class = "userinput" id = "def" max = "252">
+		            <p id = "defW" class = "warning" hidden>The number should be in the range 0 to 252</p>
+		        </td>
+		        <td>
+		            <input type = "number" name = "spAtk" class = "userinput" id = "spAtk" max = "252">
+		            <p id = "spAtkW" class = "warning" hidden>The number should be in the range 0 to 252</p>
+		        </td>
+		        <td>
+		            <input type = "number" name = "spDef" class = "userinput" id = "spDef" max = "252">
+		            <p id = "spDefW" class = "warning" hidden>The number should be in the range 0 to 252</p>
+		        </td>
+		        <td>
+		            <input type = "number" name = "speed" class = "userinput" id = "speed" max = "252">
+		            <p id = "speedW" class = "warning" hidden>The number should be in the range 0 to 252</p>
+		        </td>
+		    </tr>
+		</table>
+		
+		    <div class = "center">
+		        <input type = "submit" value = "Submit" class="submit" id = "sub">
+		        <p class = "warningSub" id = "empW" hidden>The field cannot be empty</p>
+		        <p class = "warningSub" id = "indvidualW" hidden>Individual value for each cell should be in the range 0 to 252</p>
+		        <p class = "warningSub" id = "sumW" hidden>The sum of all cells cannot exceed 510</p>
+		    </div>
+		<div>
+		    <input class=submit type="button" value="Return to menu" id="return_menu">
+		</div>
+	</body>
+</html>
