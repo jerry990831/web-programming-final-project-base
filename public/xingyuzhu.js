@@ -191,27 +191,27 @@ function statsCal() {
 
     lowerHP = calculateHP(hpS, hp_input, 0);
     upperHP = calculateHP(hpS, hp_input, 31);
-    $("#hpF").text(lowerHP + " - " + upperHP);
+    $("#hpF").text(lowerHP + " —— " + upperHP);
 
     lowerAtk = calculateOther(atkS, atkW, ark_input, 0);
     upperAtk = calculateOther(atkS, atkW, ark_input, 31);
-    $("#atkF").text(lowerAtk + " - " + upperAtk);
+    $("#atkF").text(lowerAtk + " —— " + upperAtk);
 
     lowerDef = calculateOther(defS, defW, def_input, 0);
     upperDef = calculateOther(defS, defW, def_input, 31);
-    $("#defF").text(lowerDef + " - " + upperDef);
+    $("#defF").text(lowerDef + " —— " + upperDef);
     
     lowerSpA = calculateOther(spAS, spAW, spA_input, 0);
     upperSpA = calculateOther(spAS, spAW, spA_input, 31);
-    $("#spAF").text(lowerSpA + " - " + upperSpA);
+    $("#spAF").text(lowerSpA + " —— " + upperSpA);
 
     lowerSpD = calculateOther(spDS, spDW, spD_input, 0);
     upperSpD = calculateOther(spDS, spDW, spD_input, 31);
-    $("#spDF").text(lowerSpD + " - " + upperSpD);
+    $("#spDF").text(lowerSpD + " —— " + upperSpD);
 
     lowerSpe = calculateOther(speS, speW, spe_input, 0);
     upperSpe = calculateOther(speS, speW, spe_input, 31);
-    $("#speF").text(lowerSpe + " - " + upperSpe);
+    $("#speF").text(lowerSpe + " —— " + upperSpe);
 }
 
 function calculateHP(stat, base, iv) {
