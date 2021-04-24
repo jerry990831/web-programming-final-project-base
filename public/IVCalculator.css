@@ -11,7 +11,7 @@ body {
     background-image: var(--bg-img);
     background-image: cross-fade(var(--bg-white), var(--bg-img), 40%);
     background-image: -webkit-cross-fade(var(--bg-white), var(--bg-img), 40%);
-    background-size: cover;
+    background-size: 100%;
     background-attachment: fixed;
 }
 
