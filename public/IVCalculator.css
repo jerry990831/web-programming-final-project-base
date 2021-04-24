@@ -85,6 +85,11 @@ a:hover {
     text-decoration: none;
 }
 
+h1 a:visited {
+    color: var(--header-color);
+    text-decoration: none;
+}
+
 .hidden{
     display: none;
 }
