@@ -172,10 +172,9 @@ function damagecount(event){
         }
         if(skilllist[index_chosen].Category=="Physical"){
             var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*parseInt(skilllist[index_chosen].Power)+2)*1;
-            alert(damage);
             $("#damage_number").empty();
             var result = $("<td></td>").text(damage);
-            if(damage==undefined){
+            if(damage=="NaN"){
                 alert("error, you need give more data!");
             }
             $("#damage_number").append(result);
