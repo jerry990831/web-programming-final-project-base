@@ -70,7 +70,7 @@ th, td {
     clear: both;
 }
 
-a:link {
+a {
     color: var(--unvisit-color);
     text-decoration: none;
 }
