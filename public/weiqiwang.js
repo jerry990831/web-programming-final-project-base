@@ -146,7 +146,6 @@ function showdetail(event){
 }
 
 function damagecount(event){
-    if (submit){
         let atk1=document.querySelector("#stats1_atk").value;
         let def1=document.querySelector("#stats1_def").value;
         let sp_atk1=document.querySelector("#stats1_sp_atk").value;
@@ -175,13 +174,13 @@ function damagecount(event){
             var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*parseInt(skilllist[index_chosen].Power)+2)*1;
             $("#damage_number").empty();
             var result = $("<td></td>").text(damage);
+            if(result==undefined){
+                alert("error, you need give more data!")
+            }
             $("#damage_number").append(result);
         }
-    }
-    else{
-        alert("error, you need to fill all data in correct way!");
-    }
 }
+
  $("#firstpoke").keyup(atkcheckForm);
  $("#firstpoke").click(atkcheckForm);
  $("#secondpokemon").click(defcheckForm);
