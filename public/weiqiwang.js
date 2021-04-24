@@ -174,9 +174,10 @@ function damagecount(event){
             var damage = ((2*100+10)/250*parseInt(atk1)/parseInt(def2)*parseInt(skilllist[index_chosen].Power)+2)*1;
             $("#damage_number").empty();
             var result = $("<td></td>").text(damage);
-            console.log(result);
-            if(result=="<td>NaN</td>"){
+            var zero=$("<td></td>").text("0");
+            if(isNaN(damage)){
                 alert("error, you need give more data!");
+                $("#damage_number").append(zero);
             }
             else{
                 $("#damage_number").append(result);
