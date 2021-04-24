@@ -85,8 +85,18 @@ a:hover {
     text-decoration: none;
 }
 
+h1 a:link {
+    color: var(--unvisit-color);
+    text-decoration: none;
+}
+
 h1 a:visited {
     color: var(--header-color);
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: yellowgreen;
     text-decoration: none;
 }
 
