@@ -2,6 +2,7 @@
     --header-color: crimson;
     --p-color: orangered;
     --bg-color: seashell;
+    --unvisit-color: cornflowerblue;
     --bg-white: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAEsCAMAAABgwwj8AAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+BsYMAAFjd3WkAAAAAElFTkSuQmCC");
     --bg-img: url("https://i.pinimg.com/originals/71/81/0c/71810cb153e19633aed66c9979360c5f.jpg");
 }
@@ -67,6 +68,21 @@ th, td {
     cursor: pointer;
     float: right;
     clear: both;
+}
+
+a:link {
+    color: var(--unvisit-color);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--p-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellowgreen;
+    text-decoration: none;
 }
 
 .hidden{
