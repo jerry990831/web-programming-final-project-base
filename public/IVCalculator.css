@@ -2,11 +2,17 @@
     --header-color: crimson;
     --p-color: orangered;
     --bg-color: seashell;
+    --bg-white: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAAEsCAMAAABgwwj8AAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BMQEAAADCoPVPbQwfoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+BsYMAAFjd3WkAAAAAElFTkSuQmCC");
+    --bg-img: url("https://i.pinimg.com/originals/71/81/0c/71810cb153e19633aed66c9979360c5f.jpg");
 }
 
 body {
     text-align: center; 
-    background-color: var(--bg-color);
+    background-image: var(--bg-img);
+    background-image: cross-fade(var(--bg-white), var(--bg-img), 40%);
+    background-image: -webkit-cross-fade(var(--bg-white), var(--bg-img), 40%);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1 {
