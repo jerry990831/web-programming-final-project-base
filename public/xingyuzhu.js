@@ -62,16 +62,18 @@ $speed.keyup(function(e) {
 let $emptyW = $("#empW");
 let $indW = $("#indvidualW");
 let $sumW = $("#sumW");
+let $pokemonW = $("#pokemonW");
+console.log($("#pokemon").val())
 $("#sub").click(function(e) {
-    if(!$("#pokemon").val()){
-        $emptyW.show();
-        e.preventDefault();
+    if(!$pokemonW.val() || !$pokemonW.val()){
+        console.log(1);
+        $pokemonW.show();
     }else {
         $emptyW.hide();
     }
+
     if(!$hp.val() || !$atk.val() || !$def.val() || !$spAtk.val() || !$spDef.val() || !$speed.val()){
         $emptyW.show();
-        e.preventDefault();
     }else {
         $emptyW.hide();
     }
