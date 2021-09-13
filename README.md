@@ -12,3 +12,6 @@ This repo contains a good starting place for getting a static website running on
 6. git push heroku master
 7. heroku open /
 
+
+Update: website: https://quiet-beyond-13399.herokuapp.com/yichengwang
+
